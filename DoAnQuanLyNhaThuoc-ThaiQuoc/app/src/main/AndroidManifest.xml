@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
         <activity
-            android:name=".Chung_DangNhapHeThong"
+            android:name=".Chung_QuyDinhNhaThuoc"
             android:exported="false" />
         <activity
-            android:name=".Chung_QuyDinhNhaThuoc"
+            android:name=".Chung_DangNhapHeThong"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
