@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
         <activity
+            android:name=".AD_ThongTinNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ThemNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_HienThiDanhSachNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".Chung_DoiMatKhau"
+            android:exported="false" />
+        <activity
             android:name=".Chung_QuyDinhNhaThuoc"
             android:exported="false" />
         <activity

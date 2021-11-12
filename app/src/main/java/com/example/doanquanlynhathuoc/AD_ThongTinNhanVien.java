@@ -2,15 +2,13 @@ package com.example.doanquanlynhathuoc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class AD_ThongTinNhanVien extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        startActivity(new Intent(getApplicationContext(),AD_ThongTinNhanVien.class));
+        setContentView(R.layout.activity_ad_thong_tin_nhan_vien);
     }
 }

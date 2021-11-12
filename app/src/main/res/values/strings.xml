@@ -18,5 +18,8 @@
     <string name="lienKetQuyDinhNhaThuoc">
         <u>Quy định nhà thuốc</u>
     </string>
-
+    <array name="phanLoaiNhanVien">
+        <item>Nhân Viên Kho</item>
+        <item>Nhân Viên Bán Hàng</item>
+    </array>
 </resources>
