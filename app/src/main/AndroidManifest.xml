@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
         <activity
+            android:name=".Chung_QuyDinhNhaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".Chung_DangNhapHeThong"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
