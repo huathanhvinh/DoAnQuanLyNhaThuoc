@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chung_DangNhapHeThong"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="#2196F3"
+            android:textStyle="bold"
+            android:text="Quản Lý Kho Nhà Thuốc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="100dp"
+            android:textColor="#2196F3"
+            android:textStyle="bold"
+            android:text="ABC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:text="Đăng Nhập"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#D9E6EC"
+        android:layout_margin="10dp"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="6"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:text="Tài khoản"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </TextView>
+            <EditText
+
+                android:padding="10dp"
+                android:background="#fff"
+                android:textColorHint="#000"
+                android:layout_weight="2"
+                android:hint="Nhập tài khoản"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:text="Mật Khẩu"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </TextView>
+            <EditText
+
+                android:padding="10dp"
+                android:background="#fff"
+                android:textColorHint="#000"
+                android:layout_weight="2"
+                android:hint="Nhập mật khẩu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <Button
+                android:textSize="25dp"
+                android:backgroundTint="#2196F3"
+                android:text="Đăng nhập"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#2196F3"
+            android:text="@string/lienKetQuyDinhNhaThuoc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>
