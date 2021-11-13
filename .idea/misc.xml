@@ -4,8 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_hien_thi_danh_sach_nhan_vien.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_khoa_nhan_vien_step1.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_khoa_nhan_vien_step2.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_main_menu.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_reset_mat_khau_step1.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_reset_mat_khau_step2.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_sua_nhan_vien.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_them_nhan_vien.xml" value="0.19067028985507245" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_thong_ke_bao_cao_theo_thang.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_ad_thong_tin_nhan_vien.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_chung_dang_nhap_he_thong.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_chung_doi_mat_khau.xml" value="0.19067028985507245" />
