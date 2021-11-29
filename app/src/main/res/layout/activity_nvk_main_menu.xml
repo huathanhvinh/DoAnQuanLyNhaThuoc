@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AD_MainMenu"
+    tools:context=".NVK_MainMenu"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:orientation="vertical"
@@ -18,7 +18,7 @@
             android:textSize="40dp"
             android:textColor="#2196F3"
             android:textStyle="bold"
-            android:text="Admin Main Menu"
+            android:text="NVK Main Menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </TextView>
@@ -36,7 +36,7 @@
             android:layout_weight="1"
             android:backgroundTint="#2196F3"
             android:gravity="center_vertical"
-            android:text="Xem danh sách nhân viên"
+            android:text="Xem danh sách thuốc"
             android:textColor="#fff"
             android:textSize="18dp"></Button>
         <Button
@@ -45,7 +45,7 @@
             android:gravity="center_vertical"
             android:textSize="18dp"
             android:textColor="#fff"
-            android:text="Reset Mật Khẩu Nhân Viên"
+            android:text="Xem danh sách phiếu nhập thuốc"
             android:layout_width="320dp"
             android:layout_height="0dp">
         </Button>
@@ -55,17 +55,7 @@
             android:gravity="center_vertical"
             android:textSize="18dp"
             android:textColor="#fff"
-            android:text="Khóa tài khoản Nhân Viên"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Thống kê doanh thu"
+            android:text="Tra cứu phiếu nhập thuốc"
             android:layout_width="320dp"
             android:layout_height="0dp">
         </Button>

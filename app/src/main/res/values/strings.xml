@@ -22,4 +22,12 @@
         <item>Nhân Viên Kho</item>
         <item>Nhân Viên Bán Hàng</item>
     </array>
+    <array name="DonViTinh">
+        <item>Chai</item>
+        <item>Gói</item>
+        <item>Hộp</item>
+        <item>Lọ</item>
+        <item>Vỉ</item>
+        <item>Viên</item>
+    </array>
 </resources>

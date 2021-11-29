@@ -4,6 +4,6 @@
 <item android:title="Báo cáo công nợ"></item>
 <item android:title="Tra cứu báo cáo tồn thuốc"></item>
 <item android:title="Tra cứu báo cáo công nợ"></item>
-<item android:title="Xuất báo cáo tồn thuốc"></item>
-<item android:title="Xuất báo cáo công nợ"></item>
+<!--<item android:title="Xuất báo cáo tồn thuốc"></item>-->
+<!--<item android:title="Xuất báo cáo công nợ"></item>-->
 </menu>
