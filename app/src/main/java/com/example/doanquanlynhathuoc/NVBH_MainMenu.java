@@ -4,26 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class AD_MainMenu extends AppCompatActivity {
-
-    //    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menuadmin,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-    Button btnDoiMatKhau;
-
+public class NVBH_MainMenu extends AppCompatActivity {
+Button btnDoiMatKhau;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ad_main_menu);
+        setContentView(R.layout.activity_nvbh_main_menu);
         setControl();
         setEvent();
-
     }
 
     private void setEvent() {
@@ -37,6 +28,6 @@ public class AD_MainMenu extends AppCompatActivity {
     }
 
     private void setControl() {
-        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauAD);
+        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVBH);
     }
 }

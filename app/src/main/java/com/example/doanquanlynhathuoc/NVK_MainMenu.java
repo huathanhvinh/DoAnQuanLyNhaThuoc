@@ -2,31 +2,31 @@ package com.example.doanquanlynhathuoc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Chung_QuyDinhNhaThuoc extends AppCompatActivity {
-Button btnTrove;
+public class NVK_MainMenu extends AppCompatActivity {
+Button btnDoiMatKhau;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chung_quy_dinh_nha_thuoc);
+        setContentView(R.layout.activity_nvk_main_menu);
         setControl();
         setEvent();
     }
 
     private void setEvent() {
-        //nút trở về
-        btnTrove.setOnClickListener(new View.OnClickListener() {
+        //nút đổi mật khẩu
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(getApplicationContext(),Chung_DoiMatKhau.class));
             }
         });
     }
-    private void setControl()
-    {
-        btnTrove = findViewById(R.id.btnTrove);
+    private void setControl() {
+        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVK);
     }
 }

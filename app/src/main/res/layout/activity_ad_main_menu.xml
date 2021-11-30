@@ -23,64 +23,110 @@
             android:layout_height="match_parent">
         </TextView>
     </LinearLayout>
-    <LinearLayout
-        android:gravity="center"
+    <ScrollView
         android:layout_weight="7"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:weightSum="5"
-        android:orientation="vertical">
+        android:layout_height="0dp">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="Xem danh sách nhân viên"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Thêm Nhân Viên"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Reset Mật Khẩu Nhân Viên"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Khóa Tài Khoản Nhân Viên"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Báo Cáo Tồn Thuốc"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Báo Cáo Công Nợ"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Tra Cứu Tồn Thuốc"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Tra Cứu Công Nợ"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Sửa Đổi Quy Định Nhà Thuốc"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:id="@+id/btnDoiMatKhauAD"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Đổi Mật Khẩu"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
 
-        <Button
-            android:layout_width="320dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:text="Xem danh sách nhân viên"
-            android:textColor="#fff"
-            android:textSize="18dp"></Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Reset Mật Khẩu Nhân Viên"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Khóa tài khoản Nhân Viên"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Thống kê doanh thu"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Sửa quy định nhà thuốc"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:gravity="center"
         android:layout_margin="10dp"
