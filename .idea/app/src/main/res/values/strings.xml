@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">DoAnQuanLyNhaThuoc</string>
+    <string name="quyDinhNhaThuoc1">
+        1. Hỗ trợ về truyền thông: Mediphar USA đẩy mạnh Marketing thương hiệu giúp sản phẩm được người tiêu dùng đầu cuối biết đến nhiều hơn.
+    </string>
+    <string name="quyDinhNhaThuoc2">
+        2. Giấy tờ pháp lý: Tất cả các dòng sản phẩm của Mediphar USA được trang bị đầy đủ giấy tờ chứng nhận sản phẩm (đảm bảo chất lượng, nguồn gốc).
+    </string>
+    <string name="quyDinhNhaThuoc3">
+         3. Chương trình chiết khấu: Chương trình mua 5 tặng 1 cùng chương trình tích lũy doanh số với mức chiết khấu từ 8-18%, tùy theo mức đăng kí của khách hàng.
+    </string>
+    <string name="quyDinhNhaThuoc4">
+        4. Đổi trả hàng hóa: Đối với hàng hóa xác định thuộc lỗi nhà sản xuất. Mediphar USA hỗ trợ chính sách đổi trả hàng hóa trong vòng 4 ngày.
+    </string>
+    <string name="quyDinhNhaThuoc5">
+        5. Hỗ trợ vận chuyển: Đơn hàng từ 300.000 đồng trở lên, sẽ được miễn phí hoàn toàn chi phí vận chuyển.
+    </string>
+    <string name="lienKetQuyDinhNhaThuoc">
+        <u>Quy định nhà thuốc</u>
+    </string>
+    <array name="phanLoaiNhanVien">
+        <item>Nhân Viên Kho</item>
+        <item>Nhân Viên Bán Hàng</item>
+    </array>
+    <array name="DonViTinh">
+        <item>Chai</item>
+        <item>Gói</item>
+        <item>Hộp</item>
+        <item>Lọ</item>
+        <item>Vỉ</item>
+        <item>Viên</item>
+    </array>
+    <array name="listTenThuoc">
+        <item>Name 1</item>
+        <item>Name 2</item>
+        <item>Name 3</item>
+    </array>
+</resources>

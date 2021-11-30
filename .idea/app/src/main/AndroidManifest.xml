@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.doanquanlynhathuoc">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
+        <activity
+            android:name=".NVBH_TraCuuHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThongTinHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThemHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_DanhSachHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThongTinKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThemKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_DanhSachKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_TraCuuPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThongTinPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThemPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_DanhSachPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThongTinThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThemThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_DanhSachThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuCongNo"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuTonThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".AD_BaoCaoCongNo"
+            android:exported="false" />
+        <activity
+            android:name=".AD_BaoCaoTonThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ThongKeBaoCaoTheoThang"
+            android:exported="false" />
+        <activity
+            android:name=".AD_KhoaNhanVienStep2"
+            android:exported="false" />
+        <activity
+            android:name=".AD_KhoaNhanVienStep1"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ResetMatKhauStep2"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ResetMatKhauStep1"
+            android:exported="false" />
+        <activity
+            android:name=".AD_SuaNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ThongTinNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ThemNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_HienThiDanhSachNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".AD_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".Chung_DoiMatKhau"
+            android:exported="false" />
+        <activity
+            android:name=".Chung_QuyDinhNhaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".Chung_DangNhapHeThong"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
