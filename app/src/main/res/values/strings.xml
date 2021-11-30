@@ -30,4 +30,9 @@
         <item>Vỉ</item>
         <item>Viên</item>
     </array>
+    <array name="listTenThuoc">
+        <item>Name 1</item>
+        <item>Name 2</item>
+        <item>Name 3</item>
+    </array>
 </resources>

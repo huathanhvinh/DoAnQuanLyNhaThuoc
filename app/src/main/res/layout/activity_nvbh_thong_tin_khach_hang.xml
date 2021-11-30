@@ -4,212 +4,203 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NVK_ThemThuoc"
+    android:orientation="vertical"
     android:weightSum="10"
-    android:orientation="vertical">
+    tools:context=".NVBH_ThongTinKhachHang">
+
     <LinearLayout
-        android:background="#D9E6EC"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
+
         <ImageButton
-            android:layout_gravity="center"
-            android:src="@drawable/ic_back"
             android:layout_width="80dp"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back">
 
         </ImageButton>
+
         <TextView
-            android:layout_marginLeft="50dp"
-            android:gravity="center_vertical"
-            android:textSize="30dp"
-            android:textColor="#2196F3"
-            android:textStyle="bold"
-            android:text="Thêm Thuốc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </TextView>
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="Thông tin khách hàng"
+            android:textColor="#2196F3"
+            android:textSize="25dp"
+            android:textStyle="bold"></TextView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:padding="5dp"
         android:background="#D9E6EC"
-        android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:weightSum="10"
-        android:orientation="vertical">
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:weightSum="10">
         <LinearLayout
-            android:padding="5dp"
+            android:gravity="center"
             android:layout_weight="1"
+            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:text="Mã Thuốc: "
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="Mã KH: "
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             </TextView>
-            <EditText
-                android:paddingLeft="5dp"
-                android:background="#fff"
-                android:hint="Mã thuốc..."
+            <TextView
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="KH001"
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
-
-            </EditText>
+            </TextView>
         </LinearLayout>
         <LinearLayout
+            android:gravity="center"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:text="Tên Thuốc: "
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="Tên KH: "
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
-                android:paddingLeft="5dp"
                 android:background="#fff"
-                android:hint="Tên thuốc..."
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:hint="Tên khách hàng..."
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
-
             </EditText>
         </LinearLayout>
         <LinearLayout
+            android:gravity="center"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:text="Giá bán: "
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="SDT: "
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
-                android:paddingLeft="5dp"
                 android:inputType="number"
                 android:background="#fff"
-                android:hint="giá bán..."
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:hint="Số điện thoại..."
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
-
             </EditText>
         </LinearLayout>
         <LinearLayout
+            android:gravity="center"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:text="Hạn sử dụng: "
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="Năm sinh: "
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             </TextView>
-            <EditText
-                android:paddingLeft="5dp"
-                android:inputType="number"
-                android:background="#fff"
-                android:hint="hạng dùng (tính theo tháng).."
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-            </EditText>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
             <TextView
-                android:layout_weight="1"
-                android:text="Đơn vị tính: "
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="01/01/2021"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             </TextView>
-            <Spinner
-                android:entries="@array/DonViTinh"
+            <ImageButton
                 android:background="#fff"
-                android:hint="giá bán..."
-                android:layout_weight="2"
+                android:gravity="center"
+                android:src="@drawable/ic_calendar"
+                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-            </Spinner>
+                android:layout_height="50dp">
+            </ImageButton>
         </LinearLayout>
         <LinearLayout
-            android:layout_weight="5"
-            android:padding="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_weight="6"
+            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:text="Thông Tin Thuốc: "
+                android:gravity="top"
                 android:textSize="20dp"
                 android:textColor="#000"
+                android:text="Địa chỉ: "
+                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
             </TextView>
             <EditText
                 android:gravity="top"
-                android:paddingLeft="5dp"
-                android:inputType="number"
                 android:background="#fff"
-                android:hint="hạng dùng (tính theo tháng).."
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:hint="Địa chỉ..."
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
-
             </EditText>
         </LinearLayout>
-
     </LinearLayout>
+
     <LinearLayout
-        android:gravity="center"
-        android:background="#D9E6EC"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal">
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
         <Button
-            android:backgroundTint="#2196F3"
-            android:layout_gravity="center"
-            android:text="Thêm Thuốc"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </Button>
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="Lưu KH"
+            android:textSize="25dp"></Button>
+        <Button
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="Xóa KH"
+            android:textSize="25dp"></Button>
     </LinearLayout>
 
 </LinearLayout>

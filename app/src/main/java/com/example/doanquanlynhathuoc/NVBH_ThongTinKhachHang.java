@@ -2,15 +2,13 @@ package com.example.doanquanlynhathuoc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class NVBH_ThongTinKhachHang extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        startActivity(new Intent(getApplicationContext(),NVBH_ThemHoaDon.class));
+        setContentView(R.layout.activity_nvbh_thong_tin_khach_hang);
     }
 }
