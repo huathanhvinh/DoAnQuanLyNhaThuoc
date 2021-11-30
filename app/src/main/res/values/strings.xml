@@ -18,4 +18,21 @@
     <string name="lienKetQuyDinhNhaThuoc">
         <u>Quy định nhà thuốc</u>
     </string>
+    <array name="phanLoaiNhanVien">
+        <item>Nhân Viên Kho</item>
+        <item>Nhân Viên Bán Hàng</item>
+    </array>
+    <array name="DonViTinh">
+        <item>Chai</item>
+        <item>Gói</item>
+        <item>Hộp</item>
+        <item>Lọ</item>
+        <item>Vỉ</item>
+        <item>Viên</item>
+    </array>
+    <array name="listTenThuoc">
+        <item>Name 1</item>
+        <item>Name 2</item>
+        <item>Name 3</item>
+    </array>
 </resources>

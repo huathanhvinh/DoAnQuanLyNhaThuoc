@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Báo cáo tồn thuốc"></item>
+<item android:title="Báo cáo công nợ"></item>
+<item android:title="Tra cứu báo cáo tồn thuốc"></item>
+<item android:title="Tra cứu báo cáo công nợ"></item>
+<item android:title="Sửa Đổi Quy Định Nhà Thuốc"></item>
+<!--<item android:title="Xuất báo cáo công nợ"></item>-->
+</menu>
