@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startActivity(new Intent(getApplicationContext(), Chung_DangNhapHeThong.class));
+        startActivity(new Intent(getApplicationContext(), NVK_DanhSachThuoc.class));
     }
 }

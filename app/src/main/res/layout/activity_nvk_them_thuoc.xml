@@ -14,6 +14,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_gravity="center"
             android:src="@drawable/ic_back"
             android:layout_width="80dp"
@@ -56,6 +57,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edThemMaThuoc"
                 android:paddingLeft="5dp"
                 android:background="#fff"
                 android:hint="Mã thuốc..."
@@ -81,6 +83,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edThemTenThuoc"
                 android:paddingLeft="5dp"
                 android:background="#fff"
                 android:hint="Tên thuốc..."
@@ -106,6 +109,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edThemGiaBanThuoc"
                 android:paddingLeft="5dp"
                 android:inputType="number"
                 android:background="#fff"
@@ -132,6 +136,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edThemHSDTHuoc"
                 android:paddingLeft="5dp"
                 android:inputType="number"
                 android:background="#fff"
@@ -158,6 +163,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <Spinner
+                android:id="@+id/spThemDonViTinh"
                 android:entries="@array/DonViTinh"
                 android:background="#fff"
                 android:hint="giá bán..."
@@ -183,11 +189,11 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edThemThongTinThuoc"
                 android:gravity="top"
                 android:paddingLeft="5dp"
-                android:inputType="number"
                 android:background="#fff"
-                android:hint="hạng dùng (tính theo tháng).."
+                android:hint="Thông tin.."
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
@@ -204,6 +210,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btnThemThuoc"
             android:backgroundTint="#2196F3"
             android:layout_gravity="center"
             android:text="Thêm Thuốc"
