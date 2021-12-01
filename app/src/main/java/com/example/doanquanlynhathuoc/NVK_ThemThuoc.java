@@ -24,6 +24,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
     Spinner spDonViTinh;
     Button btnThemThuoc;
     ImageButton imTrove;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +51,8 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                 String thongTin = edThongTinThuoc.getText().toString();
                 int giaBan;
                 int hsd;
-                if(maThuoc.equals("") || tenThuoc.equals("") || edGiaBan.getText().toString().equals("") ||
-                edHsd.getText().toString().equals("")||thongTin.equals(""))
-                {
+                if (maThuoc.equals("") || tenThuoc.equals("") || edGiaBan.getText().toString().equals("") ||
+                        edHsd.getText().toString().equals("") || thongTin.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThemThuoc.this);
                     builder.setTitle("Thông Báo");
                     builder.setMessage("Thông tin không được bỏ trống !!!");
@@ -62,9 +62,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                         }
                     });
                     builder.show();
-                }
-                else
-                {
+                } else {
                     giaBan = Integer.parseInt(edGiaBan.getText().toString());
                     hsd = Integer.parseInt(edHsd.getText().toString());
                     StaticConfig.mThuoc.addValueEventListener(new ValueEventListener() {
@@ -72,25 +70,20 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                         int check = 0;
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            for (DataSnapshot ds:snapshot.getChildren()) {
+                            for (DataSnapshot ds : snapshot.getChildren()) {
                                 Thuoc t = ds.getValue(Thuoc.class);
                                 stt = t.getStt();
-                                if (t.getMaThuoc().equals(maThuoc) || t.getTenThuoc().equals(tenThuoc))
-                                {
+                                if (t.getMaThuoc().equals(maThuoc) || t.getTenThuoc().equals(tenThuoc)) {
                                     check = 1;
                                 }
                             }
                             //thêm thuốc
-                            if(check != 0)
-                            {
+                            if (check != 0) {
                                 Toast.makeText(getApplicationContext(), "Đã tồn tại thuốc này trong kho !!!", Toast.LENGTH_SHORT).show();
-                            }
-                            else
-                            {
+                            } else {
                                 stt++;
-
                                 String key = StaticConfig.mThuoc.push().getKey();
-                                Thuoc t = new Thuoc(stt,giaBan,hsd,key,maThuoc,tenThuoc,dvt,thongTin);
+                                Thuoc t = new Thuoc(stt, giaBan, hsd, key, maThuoc, tenThuoc, dvt, thongTin);
                                 StaticConfig.mThuoc.child(key).setValue(t);
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThemThuoc.this);
