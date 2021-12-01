@@ -1,19 +1,26 @@
 package com.example.doanquanlynhathuoc;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.doanquanlynhathuoc.Class.Account;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 public class Chung_DoiMatKhau extends AppCompatActivity {
     TextView tvTaiKhoan;
-    EditText mkHienTai, mkMoi, mkXacNhan;
+    EditText edMkHienTai, edMkMoi, edMkXacNhan;
     Button btnDoiMatKhau;
 
     @Override
@@ -31,15 +38,92 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
         btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if()
+                String mk = edMkHienTai.getText().toString();
+                String mkmoi = edMkMoi.getText().toString();
+                String mkXN = edMkXacNhan.getText().toString();
+                if (mk.equals("") || mkmoi.equals("") || mkXN.equals("")) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DoiMatKhau.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Bạn chưa điền đủ thông tin !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                } else if (mk.equals(StaticConfig.matKhau) == false) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DoiMatKhau.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Mật khẩu hiện tại không đúng !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }else if(mkmoi.equals(mkXN)==false)
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DoiMatKhau.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Mật khẩu xác nhận không đúng !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }else
+                {
+                    StaticConfig.mAccount.addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                            if (snapshot.child("maFB").getValue().toString().equals(StaticConfig.maFB))
+                            {
+                                Account ac = snapshot.getValue(Account.class);
+                                ac.setMatKhau(edMkMoi.getText().toString());
+                                StaticConfig.mAccount.child(ac.getMaFB()).setValue(ac);
+                            }
+                        }
+
+                        @Override
+                        public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DoiMatKhau.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Đổi mật khẩu thành công !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }
             }
         });
     }
+
     private void setControl() {
         tvTaiKhoan = findViewById(R.id.tvTaiKhoan);
-        mkHienTai = findViewById(R.id.edMatKhauHienTai);
-        mkMoi = findViewById(R.id.edMatKhauMoi);
-        mkXacNhan = findViewById(R.id.edXacNhanMatKhauMoi);
+        edMkHienTai = findViewById(R.id.edMatKhauHienTai);
+        edMkMoi = findViewById(R.id.edMatKhauMoi);
+        edMkXacNhan = findViewById(R.id.edXacNhanMatKhauMoi);
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhau);
     }
 }

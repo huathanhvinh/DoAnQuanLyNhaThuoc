@@ -1,6 +1,8 @@
 package com.example.doanquanlynhathuoc.Class;
 
-public class Thuoc {
+import java.io.Serializable;
+
+public class Thuoc implements Serializable {
     int stt,giaBan,hsd;
     String maFB,maThuoc,tenThuoc,donViTinh,noiDung;
 
