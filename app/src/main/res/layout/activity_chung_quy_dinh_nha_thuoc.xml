@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Chung_QuyDinhNhaThuoc"
     android:orientation="vertical"
-    android:weightSum="7"
+    android:weightSum="10"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
     <TextView
@@ -19,52 +19,70 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
     </TextView>
-    <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:text="@string/quyDinhNhaThuoc1"
-        android:layout_weight="1"
+    <ScrollView
+        android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-    </TextView>
-    <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:text="@string/quyDinhNhaThuoc2"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </TextView>
-    <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:text="@string/quyDinhNhaThuoc3"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </TextView>
-    <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:text="@string/quyDinhNhaThuoc4"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </TextView>
-    <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:text="@string/quyDinhNhaThuoc5"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="@string/quyDinhNhaThuoc1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+            </TextView>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="@string/quyDinhNhaThuoc2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+            </TextView>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="@string/quyDinhNhaThuoc3"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+            </TextView>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="@string/quyDinhNhaThuoc4"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+            </TextView>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="@string/quyDinhNhaThuoc5"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+            </TextView>
+        </LinearLayout>
+
+    </ScrollView>
+
     <LinearLayout
         android:gravity="center"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:id="@+id/btnTrove"
             android:textSize="25dp"
             android:backgroundTint="#2196F3"
             android:text="Trở Về"

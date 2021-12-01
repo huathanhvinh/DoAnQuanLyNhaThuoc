@@ -10,6 +10,66 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
         <activity
+            android:name=".NVBH_TraCuuHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThongTinHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThemHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_DanhSachHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThongTinKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_ThemKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_DanhSachKhachHang"
+            android:exported="false" />
+        <activity
+            android:name=".NVBH_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_TraCuuPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThongTinPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThemPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_DanhSachPhieuMuaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThongTinThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_ThemThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_DanhSachThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuCongNo"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuTonThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".AD_BaoCaoCongNo"
+            android:exported="false" />
+        <activity
+            android:name=".AD_BaoCaoTonThuoc"
+            android:exported="false" />
+        <activity
             android:name=".AD_ThongKeBaoCaoTheoThang"
             android:exported="false" />
         <activity

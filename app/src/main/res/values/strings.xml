@@ -22,4 +22,17 @@
         <item>Nhân Viên Kho</item>
         <item>Nhân Viên Bán Hàng</item>
     </array>
+    <array name="DonViTinh">
+        <item>Chai</item>
+        <item>Gói</item>
+        <item>Hộp</item>
+        <item>Lọ</item>
+        <item>Vỉ</item>
+        <item>Viên</item>
+    </array>
+    <array name="listTenThuoc">
+        <item>Alaxan</item>
+        <item>Aspirin</item>
+        <item>Biragan</item>
+    </array>
 </resources>
