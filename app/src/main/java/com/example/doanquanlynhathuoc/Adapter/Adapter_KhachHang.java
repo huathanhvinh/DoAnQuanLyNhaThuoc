@@ -46,7 +46,7 @@ public class Adapter_KhachHang extends ArrayAdapter {
         KhachHang kh = arrKhachHang.get(position);
         stt.setText(kh.getStt()+"");
         tenKh.setText(kh.getTenKH());
-        giamGia.setText(kh.getGiamGia()+"");
+        giamGia.setText(kh.getGiamGia()+" %");
         sdt.setText(kh.getSdt());
 
         btnChitiet.setOnClickListener(new View.OnClickListener() {

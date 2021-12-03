@@ -73,7 +73,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                             for (DataSnapshot ds : snapshot.getChildren()) {
                                 Thuoc t = ds.getValue(Thuoc.class);
                                 stt = t.getStt();
-                                if (t.getMaThuoc().equals(maThuoc) || t.getTenThuoc().equals(tenThuoc)) {
+                                if (t.getMaThuoc().equals(maThuoc)) {
                                     check = 1;
                                 }
                             }

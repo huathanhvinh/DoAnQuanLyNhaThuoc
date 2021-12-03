@@ -49,24 +49,38 @@ public class NVK_ThongTinThuoc extends AppCompatActivity {
         btnCapNhat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Thuoc thongTinThuoc = (Thuoc) getIntent().getSerializableExtra("ThongTinThuoc");
-                thongTinThuoc.setTenThuoc(edTenThuoc.getText().toString());
-                thongTinThuoc.setGiaBan(Integer.parseInt(edGiaBan.getText().toString()));
-                thongTinThuoc.setHsd(Integer.parseInt(edHanDung.getText().toString()));
-                thongTinThuoc.setDonViTinh(spDVT.getSelectedItem().toString());
-                thongTinThuoc.setNoiDung(edThongTin.getText().toString());
+                if(edTenThuoc.getText().toString().equals("") || edGiaBan.getText().toString().equals("")||
+                edHanDung.getText().toString().equals("")||edThongTin.getText().toString().equals("")){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThongTinThuoc.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Không được để trống thông tin !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }else
+                {
+                    Thuoc thongTinThuoc = (Thuoc) getIntent().getSerializableExtra("ThongTinThuoc");
+                    thongTinThuoc.setTenThuoc(edTenThuoc.getText().toString());
+                    thongTinThuoc.setGiaBan(Integer.parseInt(edGiaBan.getText().toString()));
+                    thongTinThuoc.setHsd(Integer.parseInt(edHanDung.getText().toString()));
+                    thongTinThuoc.setDonViTinh(spDVT.getSelectedItem().toString());
+                    thongTinThuoc.setNoiDung(edThongTin.getText().toString());
 
-                StaticConfig.mThuoc.child(thongTinThuoc.getMaFB()).setValue(thongTinThuoc);
+                    StaticConfig.mThuoc.child(thongTinThuoc.getMaFB()).setValue(thongTinThuoc);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThongTinThuoc.this);
-                builder.setTitle("Thông Báo");
-                builder.setMessage("Cập nhật thành công !!!");
-                builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                builder.show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThongTinThuoc.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Cập nhật thành công !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }
             }
         });
         //nút xóa

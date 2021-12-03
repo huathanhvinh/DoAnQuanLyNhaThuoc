@@ -96,7 +96,6 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
                 } else {
                     StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
                         int check = 0;
-
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             for (DataSnapshot ds : snapshot.getChildren()) {
@@ -126,6 +125,7 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
                                 tvNgaySinh.setText("01/01/2021");
                                 edDiaChi.setText("");
                             }
+                            return;
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {

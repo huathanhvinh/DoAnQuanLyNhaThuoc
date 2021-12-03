@@ -9,6 +9,7 @@ public class StaticConfig {
    public static DatabaseReference mAccount = database.getReference("Account");
    public static DatabaseReference mThuoc = database.getReference("DanhSachThuoc");
    public static DatabaseReference mKhachHang = database.getReference("KhachHang");
+   public static DatabaseReference mNhanVien = database.getReference("DanhSachNhanVien");
    //
    public static String maFB,taiKhoan,trangThai,sdt,ghiChu,matKhau;
    public static int role;
