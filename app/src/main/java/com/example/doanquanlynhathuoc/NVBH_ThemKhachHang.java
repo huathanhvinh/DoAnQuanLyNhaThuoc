@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -27,7 +29,7 @@ import java.util.Calendar;
 
 public class NVBH_ThemKhachHang extends AppCompatActivity {
     ImageButton imTrove, imLich;
-    TextView tvMaKH, tvNgaySinh;
+    TextView tvMaKH, tvNgaySinh,tvThongBao;
     EditText edTenKH, edSDT, edDiaChi;
     Button btnThemKH;
 
@@ -48,22 +50,45 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
             }
         });
         //Mã KH tự động phát sinh
-        StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
-            int i = 0;
-
+        //Kiểm tra SDT khách hàng
+        edSDT.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot ds : snapshot.getChildren()) {
-                    KhachHang kh = ds.getValue(KhachHang.class);
-                    i = kh.getStt();
-                }
-                i++;
-                tvMaKH.setText("KH100" + i);
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds:snapshot.getChildren()) {
+                            KhachHang kh = ds.getValue(KhachHang.class);
+                            if(edSDT.getText().toString().equals(kh.getSdt()))
+                            {
+                                tvThongBao.setText("Số điện thoại đã tồn tại trong hệ thống");
+                                btnThemKH.setEnabled(false);
+                                tvMaKH.setText("KH100"+edSDT.getText().toString());
+                                return;
+                            }else
+                            {
+                                tvMaKH.setText("KH100"+edSDT.getText().toString());
+                                tvThongBao.setText("");
+                                btnThemKH.setEnabled(true);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
         //sự kiện chọn lịch và thêm ngày sinh vào textView lịch
@@ -73,7 +98,7 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
                 imButtonNgaySinh();
             }
         });
-        //Sự kiện thêm nhân viên mới
+        //Sự kiện thêm khách hàng mới
         btnThemKH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +107,7 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
                 String sdt = edSDT.getText().toString();
                 String ngaySinh = tvNgaySinh.getText().toString();
                 String diaChi = edDiaChi.getText().toString();
-                int stt = Integer.parseInt(maKH.substring(5, maKH.length()));
+
                 if (tenKH.equals("") || sdt.equals("") || diaChi.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(NVBH_ThemKhachHang.this);
                     builder.setTitle("Thông Báo");
@@ -94,44 +119,23 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
                     });
                     builder.show();
                 } else {
-                    StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
-                        int check = 0;
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            for (DataSnapshot ds : snapshot.getChildren()) {
-                                KhachHang kh = ds.getValue(KhachHang.class);
-                                if (kh.getSdt().equals(sdt)) {
-                                    check = 1;
-                                }
-                            }
-                            if (check != 0) {
-                                Toast.makeText(getApplicationContext(), "Đã tồn tại số điện thoại này trong danh sách !!!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                String key = StaticConfig.mKhachHang.push().getKey();
-                                KhachHang kh = new KhachHang(key,stt,0,0,maKH,tenKH,sdt,diaChi,ngaySinh);
-                                StaticConfig.mKhachHang.child(key).setValue(kh);
+                    String key = StaticConfig.mKhachHang.push().getKey();
+                    KhachHang kh = new KhachHang(key,0,0,maKH,tenKH,sdt,diaChi,ngaySinh);
+                    StaticConfig.mKhachHang.child(key).setValue(kh);
 
-                                AlertDialog.Builder builder = new AlertDialog.Builder(NVBH_ThemKhachHang.this);
-                                builder.setTitle("Thông Báo");
-                                builder.setMessage("Thêm thành công !!!");
-                                builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                    }
-                                });
-                                builder.show();
-                                edTenKH.setText("");
-                                edSDT.setText("");
-                                tvNgaySinh.setText("01/01/2021");
-                                edDiaChi.setText("");
-                            }
-                            return;
-                        }
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NVBH_ThemKhachHang.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Thêm thành công !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
+                        public void onClick(DialogInterface dialog, int which) {
                         }
                     });
+                    builder.show();
+                    edTenKH.setText("");
+                    edSDT.setText("");
+                    tvNgaySinh.setText("01/01/2021");
+                    edDiaChi.setText("");
                 }
             }
         });
@@ -156,6 +160,7 @@ public class NVBH_ThemKhachHang extends AppCompatActivity {
     }
 
     private void setControl() {
+        tvThongBao = findViewById(R.id.tvThongBao);
         imTrove = findViewById(R.id.imTrove);
         imLich = findViewById(R.id.imLich);
         tvMaKH = findViewById(R.id.tvMaKH);

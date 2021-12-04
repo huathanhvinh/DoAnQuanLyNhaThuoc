@@ -1,12 +1,16 @@
 package com.example.doanquanlynhathuoc;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -14,10 +18,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.doanquanlynhathuoc.Class.KhachHang;
 import com.example.doanquanlynhathuoc.Class.Thuoc;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -27,7 +33,7 @@ import java.util.Calendar;
 
 public class NVBH_ThongTinKhachHang extends AppCompatActivity {
     ImageButton imTrove, imLich;
-    TextView tvMaKH, tvNgaySinh;
+    TextView tvMaKH, tvNgaySinh, tvThongBao;
     EditText edTenKH, edSDT, edDiaChi;
     Button btnLuuKH, btnXoaKH;
 
@@ -56,6 +62,43 @@ public class NVBH_ThongTinKhachHang extends AppCompatActivity {
                 imButtonNgaySinh();
             }
         });
+        //Kiểm tra sdt khách hàng trước khi cho thay đổi
+        edSDT.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds:snapshot.getChildren()) {
+                            KhachHang kh = ds.getValue(KhachHang.class);
+                            if(edSDT.getText().toString().equals(kh.getSdt()))
+                            {
+                                tvThongBao.setText("Số điện thoại đã tồn tại trong hệ thống");
+                                btnLuuKH.setEnabled(false);
+                                return;
+                            }else
+                            {
+                                tvThongBao.setText("");
+                                btnLuuKH.setEnabled(true);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
         //nút lưu khách hàng
         btnLuuKH.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,33 +114,35 @@ public class NVBH_ThongTinKhachHang extends AppCompatActivity {
                         }
                     });
                     builder.show();
-                }
-                else {
+                } else {
                     KhachHang thongTinKH = (KhachHang) getIntent().getSerializableExtra("ThongTinKhachHang");
-                    String tenKH = edTenKH.getText().toString();
-                    final String sdt = edSDT.getText().toString();
-                    String ngaySinh = tvNgaySinh.getText().toString();
-                    String diaChi = edDiaChi.getText().toString();
-
-                    thongTinKH.setTenKH(tenKH);
-                    thongTinKH.setSdt(sdt);
-                    thongTinKH.setNamSinh(ngaySinh);
-                    thongTinKH.setDiaChi(diaChi);
+                    thongTinKH.setTenKH(edTenKH.getText().toString());
+                    thongTinKH.setSdt(edSDT.getText().toString());
+                    thongTinKH.setNamSinh(tvNgaySinh.getText().toString());
+                    thongTinKH.setDiaChi(edDiaChi.getText().toString());
 
                     StaticConfig.mKhachHang.child(thongTinKH.getMaFb()).setValue(thongTinKH);
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(NVBH_ThongTinKhachHang.this);
-                    builder.setTitle("Thông Báo");
-                    builder.setMessage("Cập nhật thành công, \n" +
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(NVBH_ThongTinKhachHang.this);
+                    builder1.setTitle("Thông Báo");
+                    builder1.setMessage("Cập nhật thành công, \n" +
                             "Vui lòng cập nhật lại thông tin tại màn hình danh sách khách hàng !!!");
-                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                    builder1.setPositiveButton("oke", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            finish();
-
+                            AlertDialog.Builder builder = new AlertDialog.Builder(NVBH_ThongTinKhachHang.this);
+                            builder.setTitle("Thông Báo");
+                            builder.setMessage("Mời bạn quay lại màn hình danh sách !!!");
+                            builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            });
+                            builder.show();
                         }
                     });
-                    builder.show();
+                    builder1.show();
                 }
             }
         });
@@ -168,6 +213,7 @@ public class NVBH_ThongTinKhachHang extends AppCompatActivity {
     }
 
     private void setControl() {
+        tvThongBao = findViewById(R.id.tvThongBao);
         imTrove = findViewById(R.id.imTrove);
         imLich = findViewById(R.id.imLich);
         tvMaKH = findViewById(R.id.tvMaKHTT);

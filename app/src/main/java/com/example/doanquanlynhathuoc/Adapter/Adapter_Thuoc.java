@@ -43,7 +43,7 @@ public class Adapter_Thuoc extends ArrayAdapter {
         Button btnChiTiet = convertView.findViewById(R.id.btnChiTiet);
 
         Thuoc t = arrThuoc.get(position);
-        stt.setText(t.getStt()+"");
+        stt.setText(t.getMaThuoc());
         tenThuoc.setText(t.getTenThuoc());
         dvt.setText(t.getDonViTinh()+"");
         giaBan.setText(t.getGiaBan()+"");

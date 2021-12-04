@@ -116,6 +116,20 @@
                     android:textColor="#2196F3"
                     android:textSize="25dp"></EditText>
             </LinearLayout>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:id="@+id/tvThongBao"
+                android:text=""
+                android:textSize="15dp"
+                android:gravity="right"
+                android:textColor="#F44336"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp">
+
+            </TextView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"

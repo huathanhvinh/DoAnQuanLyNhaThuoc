@@ -3,14 +3,13 @@ package com.example.doanquanlynhathuoc.Class;
 import java.io.Serializable;
 
 public class KhachHang implements Serializable {
-    int stt, tongTienDaMua, giamGia;
+    int tongTienDaMua, giamGia;
     String maFb, maKH, tenKH, sdt, DiaChi, NamSinh;
 
     public KhachHang() {
     }
 
-    public KhachHang(String maFb, int stt, int tongTienDaMua, int giamGia, String maKH, String tenKH, String sdt, String diaChi, String namSinh) {
-        this.stt = stt;
+    public KhachHang(String maFb, int tongTienDaMua, int giamGia, String maKH, String tenKH, String sdt, String diaChi, String namSinh) {
         this.tongTienDaMua = tongTienDaMua;
         this.giamGia = giamGia;
         this.maFb = maFb;
@@ -20,15 +19,6 @@ public class KhachHang implements Serializable {
         DiaChi = diaChi;
         NamSinh = namSinh;
     }
-
-    public int getStt() {
-        return stt;
-    }
-
-    public void setStt(int stt) {
-        this.stt = stt;
-    }
-
     public int getTongTienDaMua() {
         return tongTienDaMua;
     }

@@ -121,6 +121,17 @@
                 android:layout_height="wrap_content">
             </EditText>
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvThongBao"
+            android:layout_weight="0.5"
+            android:text=""
+            android:textSize="15dp"
+            android:gravity="right"
+            android:textColor="#F44336"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </TextView>
         <LinearLayout
             android:gravity="center"
             android:layout_weight="1"
@@ -159,7 +170,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:layout_weight="6"
+            android:layout_weight="5.5"
             android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -195,6 +206,7 @@
         android:gravity="center">
 
         <Button
+            android:focusable="false"
             android:id="@+id/btnLuuKHTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

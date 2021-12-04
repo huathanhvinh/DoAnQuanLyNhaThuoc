@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-////Account
+//        Account
 //        String key = StaticConfig.mAccount.push().getKey();
 //        Account ac = new Account(key, "thanhvinh", "123456", "0933123001", "dangSuDung", 1, "");
 //        StaticConfig.mAccount.child(key).setValue(ac);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //        Account ac3 = new Account(key3, "dinhtho", "123456", "0933123004", "khoa", 3, "Đã nghỉ việc");
 //        StaticConfig.mAccount.child(key3).setValue(ac3);
 //
-////Nhanvien
+//        Nhanvien
 //        String key5 = StaticConfig.mNhanVien.push().getKey();
 //        NhanVien ac5 = new NhanVien(key5,1,1,"1","1","0933123001","1","1");
 //        StaticConfig.mNhanVien.child(key5).setValue(ac5);
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 //        String key8 = StaticConfig.mNhanVien.push().getKey();
 //        NhanVien ac8 = new NhanVien(key8,4,3,"4","4","0933123004","4","4");
 //        StaticConfig.mNhanVien.child(key8).setValue(ac8);
-
-        startActivity(new Intent(getApplicationContext(), AD_ThemNhanVien.class));
+        startActivity(new Intent(getApplicationContext(), Chung_DangNhapHeThong.class));
     }
 }

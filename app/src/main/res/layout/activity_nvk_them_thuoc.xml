@@ -67,6 +67,17 @@
 
             </EditText>
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvThongBao"
+            android:layout_weight="0.5"
+            android:text=""
+            android:textSize="15dp"
+            android:gravity="right"
+            android:textColor="#F44336"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </TextView>
         <LinearLayout
             android:layout_weight="1"
             android:padding="5dp"
@@ -174,7 +185,7 @@
             </Spinner>
         </LinearLayout>
         <LinearLayout
-            android:layout_weight="5"
+            android:layout_weight="4.5"
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"

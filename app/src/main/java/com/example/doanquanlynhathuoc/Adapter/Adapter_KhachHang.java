@@ -44,7 +44,7 @@ public class Adapter_KhachHang extends ArrayAdapter {
         Button btnChitiet = convertView.findViewById(R.id.btnChiTiet);
 
         KhachHang kh = arrKhachHang.get(position);
-        stt.setText(kh.getStt()+"");
+        stt.setText(kh.getMaKH()+"");
         tenKh.setText(kh.getTenKH());
         giamGia.setText(kh.getGiamGia()+" %");
         sdt.setText(kh.getSdt());
