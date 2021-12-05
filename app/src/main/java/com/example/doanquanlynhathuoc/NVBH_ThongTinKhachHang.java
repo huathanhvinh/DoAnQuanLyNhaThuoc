@@ -77,9 +77,10 @@ public class NVBH_ThongTinKhachHang extends AppCompatActivity {
                 StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        KhachHang thongTinKH = (KhachHang) getIntent().getSerializableExtra("ThongTinKhachHang");
                         for (DataSnapshot ds:snapshot.getChildren()) {
                             KhachHang kh = ds.getValue(KhachHang.class);
-                            if(edSDT.getText().toString().equals(kh.getSdt()))
+                            if(edSDT.getText().toString().equals(kh.getSdt())&& kh.getMaFb().equals(thongTinKH.getMaFb())==false)
                             {
                                 tvThongBao.setText("Số điện thoại đã tồn tại trong hệ thống");
                                 btnLuuKH.setEnabled(false);

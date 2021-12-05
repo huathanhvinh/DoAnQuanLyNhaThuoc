@@ -153,6 +153,10 @@ public class AD_ThemNhanVien extends AppCompatActivity {
                         }
                     });
                     builder.show();
+                    //làm trống thông tin
+                    edSdtNV.setText("");
+                    edTenNV.setText("");
+                    edDiaChi.setText("");
                 }
             }
         });

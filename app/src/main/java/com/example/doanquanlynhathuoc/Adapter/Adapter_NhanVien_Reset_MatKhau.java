@@ -13,19 +13,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.doanquanlynhathuoc.AD_ResetMatKhauStep2;
 import com.example.doanquanlynhathuoc.AD_ThongTinNhanVien;
 import com.example.doanquanlynhathuoc.Class.NhanVien;
-import com.example.doanquanlynhathuoc.NVBH_ThongTinKhachHang;
 import com.example.doanquanlynhathuoc.R;
 
 import java.util.ArrayList;
 
-public class Adapter_NhanVien extends ArrayAdapter {
+public class Adapter_NhanVien_Reset_MatKhau extends ArrayAdapter {
     Context context;
     int resource;
     ArrayList<NhanVien> arrNhanVien;
-
-    public Adapter_NhanVien(@NonNull Context context, int resource, ArrayList<NhanVien> arrNhanVien) {
+    public Adapter_NhanVien_Reset_MatKhau(@NonNull Context context, int resource, ArrayList<NhanVien> arrNhanVien) {
         super(context, resource, arrNhanVien);
         this.context = context;
         this.resource = resource;
@@ -38,7 +37,6 @@ public class Adapter_NhanVien extends ArrayAdapter {
         convertView = LayoutInflater.from(context).inflate(resource, null);
 
         TextView maNV = convertView.findViewById(R.id.tvMaNV);
-        TextView tvChucVu = convertView.findViewById(R.id.tvChucVu);
         TextView tenNV = convertView.findViewById(R.id.tvtenNhanVien);
         TextView tvSDT = convertView.findViewById(R.id.tvSDTNV);
         Button btnChiTiet = convertView.findViewById(R.id.btnChiTiet);
@@ -49,17 +47,10 @@ public class Adapter_NhanVien extends ArrayAdapter {
         tenNV.setText(nv.getTenNV());
         tvSDT.setText(nv.getSdt());
 
-        if(nv.getRole() == 1)
-            tvChucVu.setText("Quản lý");
-        else if(nv.getRole() == 2)
-            tvChucVu.setText("NV kho");
-        else
-            tvChucVu.setText("NV bán hàng");
-
         btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), AD_ThongTinNhanVien.class);
+                Intent intent = new Intent(getContext(), AD_ResetMatKhauStep2.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("ThongTinNhanVien", nv);
                 intent.putExtras(bundle);
@@ -69,7 +60,6 @@ public class Adapter_NhanVien extends ArrayAdapter {
         });
 
         return convertView;
-
     }
 
     @Override

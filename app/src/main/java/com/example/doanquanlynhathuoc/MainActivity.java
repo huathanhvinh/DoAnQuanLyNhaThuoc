@@ -48,6 +48,6 @@ public class MainActivity extends AppCompatActivity {
 //        String key8 = StaticConfig.mNhanVien.push().getKey();
 //        NhanVien ac8 = new NhanVien(key8,4,3,"4","4","0933123004","4","4");
 //        StaticConfig.mNhanVien.child(key8).setValue(ac8);
-        startActivity(new Intent(getApplicationContext(), Chung_DangNhapHeThong.class));
+        startActivity(new Intent(getApplicationContext(), AD_KhoaNhanVienStep1.class));
     }
 }
