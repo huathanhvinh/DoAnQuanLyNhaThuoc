@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.doanquanlynhathuoc.Class.Account;
 import com.example.doanquanlynhathuoc.Class.NhanVien;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +53,6 @@ public class MainActivity extends AppCompatActivity {
 //        String key8 = StaticConfig.mNhanVien.push().getKey();
 //        NhanVien ac8 = new NhanVien(key8,4,3,"4","4","0933123004","4","4");
 //        StaticConfig.mNhanVien.child(key8).setValue(ac8);
-        startActivity(new Intent(getApplicationContext(), AD_KhoaNhanVienStep1.class));
+        startActivity(new Intent(getApplicationContext(), NVK_ThemPhieuMuaThuoc.class));
     }
 }
