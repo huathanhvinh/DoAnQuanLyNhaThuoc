@@ -85,9 +85,6 @@
             android:name=".AD_ResetMatKhauStep1"
             android:exported="false" />
         <activity
-            android:name=".AD_SuaNhanVien"
-            android:exported="false" />
-        <activity
             android:name=".AD_ThongTinNhanVien"
             android:exported="false" />
         <activity

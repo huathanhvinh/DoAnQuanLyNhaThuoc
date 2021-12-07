@@ -3,14 +3,13 @@ package com.example.doanquanlynhathuoc.Class;
 import java.io.Serializable;
 
 public class Thuoc implements Serializable {
-    int stt,giaBan,hsd;
+    int giaBan,hsd;
     String maFB,maThuoc,tenThuoc,donViTinh,noiDung;
 
     public Thuoc() {
     }
 
-    public Thuoc(int stt, int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung) {
-        this.stt = stt;
+    public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung) {
         this.giaBan = giaBan;
         this.hsd = hsd;
         this.maFB = maFB;
@@ -19,15 +18,6 @@ public class Thuoc implements Serializable {
         this.donViTinh = donViTinh;
         this.noiDung = noiDung;
     }
-
-    public int getStt() {
-        return stt;
-    }
-
-    public void setStt(int stt) {
-        this.stt = stt;
-    }
-
     public int getGiaBan() {
         return giaBan;
     }

@@ -18,10 +18,6 @@
     <string name="lienKetQuyDinhNhaThuoc">
         <u>Quy định nhà thuốc</u>
     </string>
-    <array name="phanLoaiNhanVien">
-        <item>Nhân Viên Kho</item>
-        <item>Nhân Viên Bán Hàng</item>
-    </array>
     <array name="DonViTinh">
         <item>Chai</item>
         <item>Gói</item>
@@ -34,5 +30,10 @@
         <item>Alaxan</item>
         <item>Aspirin</item>
         <item>Biragan</item>
+    </array>
+    <array name="chucVu">
+        <item>NV kho</item>
+        <item>NV bán hàng</item>
+        <item>Quản lý</item>
     </array>
 </resources>

@@ -17,6 +17,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_gravity="center"
             android:src="@drawable/ic_back"
             android:layout_width="80dp"
@@ -29,7 +30,7 @@
             android:textSize="25dp"
             android:textColor="#2196F3"
             android:textStyle="bold"
-            android:text="Thêm Phiếu Mua"
+            android:text="Thêm Phiếu Mua Thuốc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></TextView>
     </LinearLayout>
@@ -52,7 +53,7 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
                 <TextView
-                    android:text="Mã phiếu thu: "
+                    android:text="Mã phiếu mua: "
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="1"
@@ -60,6 +61,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tvMaPhieuMuaThuoc"
                     android:text="MT01"
                     android:textSize="20dp"
                     android:textColor="#000"
@@ -69,6 +71,7 @@
                 </TextView>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -82,6 +85,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tvNgayPhieuMuaThuoc"
                     android:text="01/01/2021"
                     android:textSize="20dp"
                     android:textColor="#000"
@@ -90,6 +94,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <ImageButton
+                    android:id="@+id/imLich"
                     android:background="#fff"
                     android:src="@drawable/ic_calendar"
                     android:layout_weight="1"
@@ -98,6 +103,7 @@
                 </ImageButton>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -110,6 +116,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:id="@+id/edTimTenThuoc"
                     android:drawableLeft="@drawable/ic_search"
                     android:layout_marginTop="1dp"
                     android:background="#fff"
@@ -122,6 +129,7 @@
                 </EditText>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -135,7 +143,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <Spinner
-                    android:entries="@array/listTenThuoc"
+                    android:id="@+id/spDanhSachThuoc"
                     android:drawableLeft="@drawable/ic_search"
                     android:background="#fff"
                     android:hint="Tìm tên thuốc..."
@@ -147,6 +155,7 @@
                 </Spinner>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -160,6 +169,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tvMaThuoc"
                     android:text="Mã thuốc"
                     android:textSize="20dp"
                     android:textColor="#000"
@@ -169,6 +179,7 @@
                 </TextView>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -182,6 +193,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tvDonViTinh"
                     android:text="Đơn vị tính"
                     android:textSize="20dp"
                     android:textColor="#000"
@@ -191,6 +203,7 @@
                 </TextView>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,6 +218,8 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:inputType="number"
+                    android:id="@+id/edSoluongThuoc"
                     android:gravity="center"
                     android:background="#fff"
                     android:text="1"
@@ -220,11 +235,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageButton
+                        android:id="@+id/imThem1"
                         android:src="@drawable/ic_add"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                     </ImageButton>
                     <ImageButton
+                        android:id="@+id/imTru1"
                         android:src="@drawable/ic_remove"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -246,6 +263,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tvThanhTien"
                     android:text="900,000,000"
                     android:textSize="20dp"
                     android:textColor="#000"
@@ -254,6 +272,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <Button
+                    android:id="@+id/btnThem"
                     android:backgroundTint="#2196F3"
                     android:text="Thêm"
                     android:layout_weight="1"
@@ -262,7 +281,16 @@
 
                 </Button>
             </LinearLayout>
+            <TextView
+                android:gravity="center|left"
+                android:text="Ds"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
             <ListView
+                android:id="@+id/dsThuocDaMua"
                 android:background="#fff"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -280,6 +308,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btnThemPhieuMua"
             android:backgroundTint="#2196F3"
             android:layout_gravity="center"
             android:text="Thêm Phiếu Mua"

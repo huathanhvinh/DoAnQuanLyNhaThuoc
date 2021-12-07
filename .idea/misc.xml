@@ -26,7 +26,8 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_chung_doi_mat_khau.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_chung_quy_dinh_nha_thuoc.xml" value="0.19067028985507245" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_main.xml" value="0.13353825136612021" />
-        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_danh_sach_khach_hang.xml" value="0.13353825136612021" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_danh_sach_hoa_don.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_danh_sach_khach_hang.xml" value="0.165" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_danh_sach_phieu_thu_tien.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_main_menu.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_them_hoa_don.xml" value="0.165" />
@@ -42,6 +43,10 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_phieu_mua_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_tra_cuu_phieu_mua_thuoc.xml" value="0.13353825136612021" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_khachhang.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_khoa.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_reset_matkhau.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_thuoc.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/menu/menuadmin.xml" value="0.22135416666666666" />
       </map>

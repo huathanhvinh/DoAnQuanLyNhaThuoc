@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_width="80dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -63,10 +64,10 @@
                 android:layout_height="match_parent">
             </TextView>
             <TextView
+                android:id="@+id/tvTaiKhoanNV"
                 android:textSize="30dp"
-                android:textColor="#000"
+                android:textColor="#F44336"
                 android:gravity="center_vertical"
-                android:text="NVK100001"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="2"
                 android:layout_width="0dp"
@@ -91,10 +92,10 @@
                 android:layout_height="match_parent">
             </TextView>
             <TextView
+                android:id="@+id/sdtNv"
                 android:textSize="30dp"
-                android:textColor="#000"
+                android:textColor="#F44336"
                 android:gravity="center_vertical"
-                android:text="0933123101"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="2"
                 android:layout_width="0dp"
@@ -129,6 +130,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/edMatKhauMoiRS"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="10dp"
@@ -165,6 +167,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/edXacNhanMatKhauMoiRS"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="10dp"
@@ -188,6 +191,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btnRSMatKhau"
             android:textSize="25dp"
             android:backgroundTint="#2196F3"
             android:text="Reset Mật Khẩu"
