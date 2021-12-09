@@ -2,36 +2,20 @@ package com.example.doanquanlynhathuoc.Class;
 
 import java.io.Serializable;
 
-public class Thuoc implements Serializable {
-    int giaBan,hsd;
-    String maFB,maThuoc,tenThuoc,donViTinh,noiDung;
+public class ItemMuaBanThuoc implements Serializable {
+    String maFB,maThuoc,tenThuoc,donViTinh;
+    int soLuong,thanhTien;
 
-    public Thuoc() {
+    public ItemMuaBanThuoc() {
     }
 
-    public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung) {
-        this.giaBan = giaBan;
-        this.hsd = hsd;
+    public ItemMuaBanThuoc(String maFB, String maThuoc, String tenThuoc, String donViTinh, int soLuong, int thanhTien) {
         this.maFB = maFB;
         this.maThuoc = maThuoc;
         this.tenThuoc = tenThuoc;
         this.donViTinh = donViTinh;
-        this.noiDung = noiDung;
-    }
-    public int getGiaBan() {
-        return giaBan;
-    }
-
-    public void setGiaBan(int giaBan) {
-        this.giaBan = giaBan;
-    }
-
-    public int getHsd() {
-        return hsd;
-    }
-
-    public void setHsd(int hsd) {
-        this.hsd = hsd;
+        this.soLuong = soLuong;
+        this.thanhTien = thanhTien;
     }
 
     public String getMaFB() {
@@ -66,11 +50,20 @@ public class Thuoc implements Serializable {
         this.donViTinh = donViTinh;
     }
 
-    public String getNoiDung() {
-        return noiDung;
+    public int getSoLuong() {
+        return soLuong;
     }
 
-    public void setNoiDung(String noiDung) {
-        this.noiDung = noiDung;
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
     }
+
+    public int getThanhTien() {
+        return thanhTien;
+    }
+
+    public void setThanhTien(int thanhTien) {
+        this.thanhTien = thanhTien;
+    }
+
 }

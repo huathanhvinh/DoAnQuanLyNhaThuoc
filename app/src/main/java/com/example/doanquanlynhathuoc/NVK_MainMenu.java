@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class NVK_MainMenu extends AppCompatActivity {
-Button btnDoiMatKhau;
+Button btnDoiMatKhau,btnLapPhieuNhapThuoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +25,16 @@ Button btnDoiMatKhau;
                 startActivity(new Intent(getApplicationContext(),Chung_DoiMatKhau.class));
             }
         });
+        //nút lập phiếu nhập thuốc
+        btnLapPhieuNhapThuoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),NVK_ThemPhieuMuaThuoc.class));
+            }
+        });
     }
     private void setControl() {
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVK);
+        btnLapPhieuNhapThuoc = findViewById(R.id.btnNVK_LapPhieuNhapThuoc);
     }
 }

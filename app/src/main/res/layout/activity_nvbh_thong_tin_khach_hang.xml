@@ -17,6 +17,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_width="80dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -59,9 +60,9 @@
                 android:layout_height="wrap_content">
             </TextView>
             <TextView
+                android:id="@+id/tvMaKHTT"
                 android:textSize="20dp"
                 android:textColor="#000"
-                android:text="KH001"
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
@@ -83,6 +84,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edTenKHTT"
                 android:background="#fff"
                 android:textSize="20dp"
                 android:textColor="#000"
@@ -108,6 +110,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <EditText
+                android:id="@+id/edSDTKHTT"
                 android:inputType="number"
                 android:background="#fff"
                 android:textSize="20dp"
@@ -118,6 +121,17 @@
                 android:layout_height="wrap_content">
             </EditText>
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvThongBao"
+            android:layout_weight="0.5"
+            android:text=""
+            android:textSize="15dp"
+            android:gravity="right"
+            android:textColor="#F44336"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </TextView>
         <LinearLayout
             android:gravity="center"
             android:layout_weight="1"
@@ -134,6 +148,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <TextView
+                android:id="@+id/tvNamSinhKHTT"
                 android:textSize="20dp"
                 android:textColor="#000"
                 android:text="01/01/2021"
@@ -142,6 +157,7 @@
                 android:layout_height="wrap_content">
             </TextView>
             <ImageButton
+                android:id="@+id/imLich"
                 android:background="#fff"
                 android:gravity="center"
                 android:src="@drawable/ic_calendar"
@@ -154,7 +170,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:layout_weight="6"
+            android:layout_weight="5.5"
             android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -169,6 +185,7 @@
                 android:layout_height="match_parent">
             </TextView>
             <EditText
+                android:id="@+id/edDiaChiKHTT"
                 android:gravity="top"
                 android:background="#fff"
                 android:textSize="20dp"
@@ -189,12 +206,15 @@
         android:gravity="center">
 
         <Button
+            android:focusable="false"
+            android:id="@+id/btnLuuKHTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#2196F3"
             android:text="Lưu KH"
             android:textSize="25dp"></Button>
         <Button
+            android:id="@+id/btnXoaKHTT"
             android:layout_marginLeft="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
