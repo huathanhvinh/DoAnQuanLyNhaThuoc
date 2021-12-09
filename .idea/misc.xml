@@ -38,7 +38,7 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_danh_sach_phieu_mua_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_danh_sach_thuoc.xml" value="0.1369535519125683" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_main_menu.xml" value="0.1369535519125683" />
-        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_them_phieu_mua_thuoc.xml" value="0.13353825136612021" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_them_phieu_mua_thuoc.xml" value="0.165" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_them_thuoc.xml" value="0.165" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_phieu_mua_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_thuoc.xml" value="0.13353825136612021" />
@@ -48,6 +48,7 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_khoa.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_reset_matkhau.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_thuoc.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/item_mua_ban_thuoc.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/menu/menuadmin.xml" value="0.22135416666666666" />
       </map>
     </option>
