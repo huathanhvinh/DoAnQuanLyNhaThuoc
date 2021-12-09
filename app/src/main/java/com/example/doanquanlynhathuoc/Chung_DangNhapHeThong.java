@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.doanquanlynhathuoc.Class.Account;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
@@ -63,15 +64,25 @@ public class Chung_DangNhapHeThong extends AppCompatActivity {
                             String matKhau = edMatKhau.getText().toString();
                             for (DataSnapshot ds : snapshot.getChildren()) {
                                 Account ac = ds.getValue(Account.class);
-                                if (taiKhoan.equals(ac.getTaiKhoan()) && matKhau.equals(ac.getTaiKhoan())
-                                        && ac.getTrangThai().equals("khoa")) {
+                                if (taiKhoan.equals(ac.getTaiKhoan()) && matKhau.equals(ac.getMatKhau()) && ac.getTrangThai().equals("khoa")) {
                                     check = 1;
-                                } else if (taiKhoan.equals(ac.getTaiKhoan()) && matKhau.equals(ac.getTaiKhoan())
-                                        && ac.getTrangThai().equals("khoa") == false) {
+                                    StaticConfig.ghiChu = ac.getGhiChu();
+                                    break;
+                                } else if (taiKhoan.equals(ac.getTaiKhoan()) && matKhau.equals(ac.getMatKhau()) && ac.getTrangThai().equals("khoa") == false) {
                                     check = 2;
-                                } else
+                                    StaticConfig.maFB = ac.getMaFB();
+                                    StaticConfig.taiKhoan = ac.getTaiKhoan();
+                                    StaticConfig.trangThai = ac.getTrangThai();
+                                    StaticConfig.sdt = ac.getSdt();
+                                    StaticConfig.role = ac.getRole();
+                                    StaticConfig.matKhau = ac.getMatKhau();
+                                    break;
+                                } else {
                                     check = 3;
+                                }
+
                             }
+                            //Kiểm tra và cho đăng nhập
                             if (check == 3) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DangNhapHeThong.this);
                                 builder.setTitle("Thông Báo");
@@ -83,19 +94,16 @@ public class Chung_DangNhapHeThong extends AppCompatActivity {
                                 });
                                 builder.show();
                             } else if (check == 2) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DangNhapHeThong.this);
-                                builder.setTitle("Thông Báo");
-                                builder.setMessage("oke !!!");
-                                builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                    }
-                                });
-                                builder.show();
+                                if (StaticConfig.role == 1) {
+                                    startActivity(new Intent(getApplicationContext(), AD_MainMenu.class));
+                                } else if (StaticConfig.role == 2) {
+                                    startActivity(new Intent(getApplicationContext(), NVK_MainMenu.class));
+                                }else
+                                    startActivity(new Intent(getApplicationContext(), NVBH_MainMenu.class));
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Chung_DangNhapHeThong.this);
                                 builder.setTitle("Thông Báo");
-                                builder.setMessage("khóa !!!");
+                                builder.setMessage("Tài khoản của bạn đã bị khóa !!!\n Lý do: " + StaticConfig.ghiChu + "");
                                 builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

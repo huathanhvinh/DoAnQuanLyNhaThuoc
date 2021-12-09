@@ -17,6 +17,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_gravity="center"
             android:src="@drawable/ic_back"
             android:layout_width="80dp"
@@ -43,6 +44,7 @@
         android:weightSum="3"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/imRefreshThuoc"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
@@ -52,6 +54,7 @@
 
         </ImageButton>
         <EditText
+            android:id="@+id/edTimKiemThuoc"
             android:layout_weight="2"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
@@ -69,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <ListView
+            android:id="@+id/lvDanhSachThuoc"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </ListView>
@@ -87,6 +91,7 @@
             android:layout_height="match_parent">
         </ImageView>
         <TextView
+            android:id="@+id/tvThemThuocMoi"
             android:text="Thêm thuốc mới"
             android:textSize="20dp"
             android:textColor="#2196F3"
