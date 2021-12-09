@@ -53,11 +53,12 @@
 
         </TextView>
         <TextView
+            android:id="@+id/tvTaiKhoan"
             android:layout_marginLeft="20dp"
             android:gravity="center_vertical"
             android:layout_gravity="center"
             android:layout_weight="2"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textColor="#2196F3"
             android:textStyle="bold"
             android:text="nv001"
@@ -88,6 +89,7 @@
 
         </TextView>
         <EditText
+            android:id="@+id/edMatKhauHienTai"
             android:inputType="textPassword"
             android:layout_margin="10dp"
             android:background="#fff"
@@ -123,6 +125,7 @@
 
         </TextView>
         <EditText
+            android:id="@+id/edMatKhauMoi"
             android:inputType="textPassword"
             android:layout_margin="10dp"
             android:background="#fff"
@@ -158,6 +161,7 @@
 
         </TextView>
         <EditText
+            android:id="@+id/edXacNhanMatKhauMoi"
             android:inputType="textPassword"
             android:layout_margin="10dp"
             android:background="#fff"
@@ -177,6 +181,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:id="@+id/btnDoiMatKhau"
             android:textSize="25dp"
             android:backgroundTint="#2196F3"
             android:text="Đổi mật khẩu"

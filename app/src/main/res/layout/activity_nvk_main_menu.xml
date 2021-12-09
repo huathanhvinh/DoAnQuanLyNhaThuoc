@@ -23,53 +23,62 @@
             android:layout_height="match_parent">
         </TextView>
     </LinearLayout>
-    <LinearLayout
-        android:gravity="center_horizontal"
+    <ScrollView
         android:layout_weight="7"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:weightSum="5"
-        android:orientation="vertical">
-        <Button
-            android:layout_width="320dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:text="Lập phiếu nhập thuốc"
-            android:textColor="#fff"
-            android:textSize="18dp"></Button>
-        <Button
-            android:layout_width="320dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:text="Xem danh sách thuốc"
-            android:textColor="#fff"
-            android:textSize="18dp"></Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Xem danh sách phiếu nhập thuốc"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
-        <Button
-            android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#fff"
-            android:text="Tra cứu phiếu nhập thuốc"
-            android:layout_width="320dp"
-            android:layout_height="0dp">
-        </Button>
+        android:layout_height="0dp">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnNVK_LapPhieuNhapThuoc"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="Lập Phiếu Nhập Thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="xem danh sách thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="Xem danh sách phiếu nhập thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Tra cứu phiếu nhập thuốc"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:id="@+id/btnDoiMatKhauNVK"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="đổi mật khẩu"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:gravity="center"
         android:layout_margin="10dp"
