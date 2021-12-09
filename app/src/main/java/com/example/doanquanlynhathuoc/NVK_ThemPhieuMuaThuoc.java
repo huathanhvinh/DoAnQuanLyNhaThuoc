@@ -100,7 +100,7 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
                 String key = StaticConfig.mAccount.push().getKey();
                 int thanhTien = Integer.parseInt(tvThanhTien.getText().toString());
                 int soLuong = Integer.parseInt(edSoLuong.getText().toString());
-                ItemMuaBanThuoc item = new ItemMuaBanThuoc(key, tvMaThuoc.getText().toString(), spDanhSachThuoc.getSelectedItem().toString(), tvDonViTinh.getText().toString(), soLuong, thanhTien);
+                ItemMuaBanThuoc item = new ItemMuaBanThuoc(key, tvMaThuoc.getText().toString(), spDanhSachThuoc.getSelectedItem().toString(), tvDonViTinh.getText().toString(), soLuong, thanhTien,0);
                 arrItem.add(item);
                 adapter_itemMuaBanThuoc.notifyDataSetChanged();
                 int tongTien = Integer.parseInt(tvTongTien1.getText().toString());
@@ -230,8 +230,6 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void layDanhSachThuocTruyenVaoSP() {

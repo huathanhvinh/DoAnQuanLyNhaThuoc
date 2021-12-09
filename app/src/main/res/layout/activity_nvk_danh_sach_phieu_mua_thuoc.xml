@@ -7,16 +7,14 @@
     tools:context=".NVK_DanhSachThuoc"
     android:weightSum="10"
     android:orientation="vertical"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:padding="5dp">
     <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_gravity="center"
             android:src="@drawable/ic_back"
             android:layout_width="80dp"
@@ -36,13 +34,12 @@
     <LinearLayout
         android:background="#D9E6EC"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:weightSum="3"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/imRefreshPMT"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
@@ -52,6 +49,7 @@
 
         </ImageButton>
         <EditText
+            android:id="@+id/edTimKiemPMT"
             android:layout_weight="2"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
@@ -69,13 +67,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <ListView
+            android:id="@+id/lvDanhSachPMT"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </ListView>
     </LinearLayout>
     <LinearLayout
         android:gravity="center"
-        android:layout_margin="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -87,6 +85,7 @@
             android:layout_height="match_parent">
         </ImageView>
         <TextView
+            android:id="@+id/tvThemPhieuMuaThuoc"
             android:text="Thêm phiếu mới"
             android:textSize="20dp"
             android:textColor="#2196F3"
