@@ -5,29 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AD_MainMenu"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:padding="5dp"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:weightSum="10">
     <LinearLayout
+        android:weightSum="4"
         android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:orientation="vertical">
         <TextView
+            android:layout_weight="3"
             android:gravity="center"
             android:textSize="40dp"
-            android:textColor="#2196F3"
+            android:textColor="#03A9F4"
             android:textStyle="bold"
             android:text="Admin Main Menu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
+        </TextView>
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:textColor="#03A9F4"
+            android:textStyle="bold"
+            android:text="Xin chào: abc0933123001"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
         </TextView>
     </LinearLayout>
     <ScrollView
+        android:background="#FFFFFF"
         android:layout_weight="7"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <LinearLayout
+            android:paddingTop="10dp"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,93 +50,113 @@
             android:orientation="vertical">
             <Button
                 android:layout_width="320dp"
-                android:layout_height="100dp"
-                android:backgroundTint="#2196F3"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
-                android:text="Xem danh sách nhân viên"
+                android:text="1. Xem danh sách nhân viên"
                 android:textColor="#fff"
                 android:textSize="18dp"></Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Thêm Nhân Viên"
+                android:text="2. Thêm Nhân Viên"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Reset Mật Khẩu Nhân Viên"
+                android:text="3. Reset Mật Khẩu Nhân Viên"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Khóa Tài Khoản Nhân Viên"
+                android:text="4. Khóa Tài Khoản Nhân Viên"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Báo Cáo Tồn Thuốc"
+                android:text="5. Báo Cáo Tồn Thuốc"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Báo Cáo Công Nợ"
+                android:text="6. Báo Cáo Công Nợ"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Tra Cứu Tồn Thuốc"
+                android:text="7. Tra Cứu Tồn Thuốc"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Tra Cứu Công Nợ"
+                android:text="8. Tra Cứu Công Nợ"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Sửa Đổi Quy Định Nhà Thuốc"
+                android:text="9. Sửa Đổi Quy Định Nhà Thuốc"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
             <Button
                 android:id="@+id/btnDoiMatKhauAD"
-                android:backgroundTint="#2196F3"
+                android:background="@drawable/custom_button_admin_mainmenu"
+                android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="Đổi Mật Khẩu"
+                android:text="10. Đổi Mật Khẩu"
                 android:layout_width="320dp"
-                android:layout_height="100dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp">
             </Button>
 
         </LinearLayout>
@@ -129,14 +164,14 @@
 
     <LinearLayout
         android:gravity="center"
-        android:layout_margin="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
             android:textSize="25dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#00BCD4"
             android:text="Đăng Xuất"
+            android:textColor="#fff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </Button>

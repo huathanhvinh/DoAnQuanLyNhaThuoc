@@ -34,7 +34,7 @@ Button btnDoiMatKhau,btnLapPhieuNhapThuoc;
         });
     }
     private void setControl() {
-        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVK);
-        btnLapPhieuNhapThuoc = findViewById(R.id.btnNVK_LapPhieuNhapThuoc);
+        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhau);
+        btnLapPhieuNhapThuoc = findViewById(R.id.btnLapPhieuNhapThuoc);
     }
 }
