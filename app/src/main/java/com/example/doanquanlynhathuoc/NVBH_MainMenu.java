@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class NVBH_MainMenu extends AppCompatActivity {
-Button btnDoiMatKhau;
+Button btnDoiMatKhau,btnThemHoaDon;;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +25,17 @@ Button btnDoiMatKhau;
                 startActivity(new Intent(getApplicationContext(),Chung_DoiMatKhau.class));
             }
         });
+        //nút thêm hóa đơn
+        btnThemHoaDon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),NVBH_ThemHoaDon.class));
+            }
+        });
     }
 
     private void setControl() {
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVBH);
+        btnThemHoaDon = findViewById(R.id.btnThemHoaDon);
     }
 }

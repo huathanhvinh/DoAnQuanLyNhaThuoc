@@ -33,6 +33,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
+                android:id="@+id/btnThemHoaDon"
                 android:layout_width="320dp"
                 android:layout_height="100dp"
                 android:backgroundTint="#2196F3"

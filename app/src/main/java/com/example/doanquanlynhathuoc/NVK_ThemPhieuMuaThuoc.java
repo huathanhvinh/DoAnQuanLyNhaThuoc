@@ -97,7 +97,7 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
         btnThemThuoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String key = StaticConfig.mAccount.push().getKey();
+                String key = StaticConfig.mItemMuaBanThuoc.push().getKey();
                 int thanhTien = Integer.parseInt(tvThanhTien.getText().toString());
                 int soLuong = Integer.parseInt(edSoLuong.getText().toString());
                 ItemMuaBanThuoc item = new ItemMuaBanThuoc(key, tvMaThuoc.getText().toString(), spDanhSachThuoc.getSelectedItem().toString(), tvDonViTinh.getText().toString(), soLuong, thanhTien,0);
@@ -173,7 +173,6 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
                             StaticConfig.mKhoThuoc.addValueEventListener(new ValueEventListener() {
                                 int min = 0;
                                 int max = dsThuoc.size();
-
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (min < max) {

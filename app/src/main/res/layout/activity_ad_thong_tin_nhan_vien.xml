@@ -240,7 +240,6 @@
                 <EditText
                     android:id="@+id/edDiaChiNVTT"
                     android:paddingLeft="5dp"
-                    android:focusable="false"
                     android:background="#fff"
                     android:gravity="top"
                     android:textSize="22dp"
