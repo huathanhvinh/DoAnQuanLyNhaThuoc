@@ -10,21 +10,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.doanquanlynhathuoc.Class.PhieuHoaDon;
 import com.example.doanquanlynhathuoc.Class.PhieuMuaThuoc;
 import com.example.doanquanlynhathuoc.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Adapter_PhieuMuaThuocTraCuu extends ArrayAdapter {
+public class Adapter_TraCuuHoaDon extends ArrayAdapter {
     Context context;
     int resource;
-    ArrayList<PhieuMuaThuoc> arrPhieuMuaThuoc;
-    public Adapter_PhieuMuaThuocTraCuu(@NonNull Context context, int resource, ArrayList<PhieuMuaThuoc> arrPhieuMuaThuoc) {
-        super(context, resource, arrPhieuMuaThuoc);
+    ArrayList<PhieuHoaDon> arrPhieuHoaDon;
+    public Adapter_TraCuuHoaDon(@NonNull Context context, int resource, ArrayList<PhieuHoaDon> arrPhieuHoaDon) {
+        super(context, resource, arrPhieuHoaDon);
         this.context = context;
         this.resource = resource;
-        this.arrPhieuMuaThuoc = arrPhieuMuaThuoc;
+        this.arrPhieuHoaDon = arrPhieuHoaDon;
     }
 
     @NonNull
@@ -32,14 +33,14 @@ public class Adapter_PhieuMuaThuocTraCuu extends ArrayAdapter {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(resource, null);
 
-        TextView maPhieu = convertView.findViewById(R.id.tvMaPhieu2);
-        TextView ngayLap = convertView.findViewById(R.id.tvNgayLap2);
-        TextView tenNhanVien = convertView.findViewById(R.id.tvNhanVienLap2);
-        TextView tongTien = convertView.findViewById(R.id.tvTongTien2);
+        TextView maPhieu = convertView.findViewById(R.id.tvMaPhieu3);
+        TextView ngayLap = convertView.findViewById(R.id.tvNgayLap3);
+        TextView tenNhanVien = convertView.findViewById(R.id.tvNhanVienLap3);
+        TextView tongTien = convertView.findViewById(R.id.tvTongTien3);
 
-        PhieuMuaThuoc phieuMua = arrPhieuMuaThuoc.get(position);
+        PhieuHoaDon phieuMua = arrPhieuHoaDon.get(position);
 
-        maPhieu.setText("Mã phiếu: "+phieuMua.getMaPhieu());
+        maPhieu.setText("Mã hóa đơn: "+phieuMua.getMaPhieu());
         ngayLap.setText("Ngày lập: "+phieuMua.getNgayLap());
         tenNhanVien.setText("Nhân viên lập: "+phieuMua.getNhanVienLap());
         int tongTienChuaFM = phieuMua.getTongTien();
@@ -51,6 +52,6 @@ public class Adapter_PhieuMuaThuocTraCuu extends ArrayAdapter {
 
     @Override
     public int getCount() {
-        return arrPhieuMuaThuoc.size();
+        return arrPhieuHoaDon.size();
     }
 }

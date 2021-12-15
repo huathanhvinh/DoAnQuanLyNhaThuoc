@@ -14,8 +14,9 @@ public class StaticConfig {
    public static DatabaseReference mPhieuMuaThuoc = database.getReference("DanhSachPhieuMuaThuoc");
    public static DatabaseReference mPhieuHoaDon = database.getReference("DanhSachHoaDon");
    public static DatabaseReference mKhoThuoc = database.getReference("KhoThuoc");
+   public static DatabaseReference mQuyDinh = database.getReference("QuyDinhNhaThuoc");
    //
-   public static String maFB,taiKhoan,trangThai,sdt="0933123003",ghiChu,matKhau;
+   public static String maFB,taiKhoan,trangThai,sdt,ghiChu,matKhau;
    public static int role;
 
 
