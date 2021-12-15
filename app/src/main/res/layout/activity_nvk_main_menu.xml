@@ -18,17 +18,19 @@
             android:layout_weight="3"
             android:gravity="center"
             android:textSize="40dp"
-            android:textColor="#000000"
+            android:textColor="#FF9800"
             android:textStyle="bold"
             android:text="NVK Main Menu"
             android:layout_width="match_parent"
             android:layout_height="0dp">
         </TextView>
         <TextView
+            android:layout_marginRight="10dp"
+            android:id="@+id/tvTaiKhoan"
             android:layout_weight="1"
             android:gravity="right"
             android:textSize="20dp"
-            android:textColor="#000000"
+            android:textColor="#FF9800"
             android:textStyle="bold"
             android:text="Xin chào: abc0933123001"
             android:layout_width="match_parent"
@@ -57,26 +59,29 @@
                 android:textColor="#000"
                 android:textSize="18dp"></Button>
             <Button
+                android:id="@+id/btnTraCuuKho"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_button_nvk"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
-                android:text="2. xem danh sách thuốc"
+                android:text="2. Tra Cứu Kho"
                 android:textColor="#000"
                 android:textSize="18dp"></Button>
             <Button
+                android:id="@+id/btnTraCuuPhieuNhapThuoc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_button_nvk"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
-                android:text="3. Xem danh sách phiếu nhập thuốc"
+                android:text="3. Tra cứu phiếu nhập thuốc"
                 android:textColor="#000"
                 android:textSize="18dp"></Button>
             <Button
+                android:id="@+id/btnXemDanhSachThuoc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
@@ -85,7 +90,19 @@
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#000"
-                android:text="4. Tra cứu phiếu nhập thuốc">
+                android:text="4. Xem danh sách thuốc">
+            </Button>
+            <Button
+                android:id="@+id/btnXemDanhSachPhieuNhapThuoc"
+                android:layout_width="320dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button_nvk"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:text="5. xem danh sách phiếu nhập thuốc">
             </Button>
             <Button
                 android:id="@+id/btnDoiMatKhau"
@@ -97,7 +114,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#000"
-                android:text="5. Đổi mật khẩu">
+                android:text="6. Đổi mật khẩu">
             </Button>
 
         </LinearLayout>
@@ -108,6 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:id="@+id/btnDangXuat"
             android:textSize="25dp"
             android:backgroundTint="#FF9800"
             android:text="Đăng Xuất"

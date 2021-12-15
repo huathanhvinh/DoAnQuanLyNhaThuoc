@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doanquanlynhathuoc.Class.PhieuHoaDon;
@@ -43,6 +44,7 @@ public class AD_ThongKeDoanhSoTheoNam extends AppCompatActivity {
     PieChart pieChare;
     TextView tvTongHoaDon;
     TextView tvNamHienTai,tvNamHienTai1;
+    ImageView imTroVe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,13 @@ public class AD_ThongKeDoanhSoTheoNam extends AppCompatActivity {
     }
 
     private void setEvent() {
+        //nút trở về
+        imTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         //lấy ra năm hiện tại
         layNamHienTai();
         //biểu đồ cột
@@ -289,6 +298,7 @@ public class AD_ThongKeDoanhSoTheoNam extends AppCompatActivity {
     }
 
     private void setControl() {
+        imTroVe = findViewById(R.id.imTrove);
         barChart = findViewById(R.id.barChart);
         pieChare = findViewById(R.id.pieChare);
         tvTongHoaDon = findViewById(R.id.tvTongHoaDon);

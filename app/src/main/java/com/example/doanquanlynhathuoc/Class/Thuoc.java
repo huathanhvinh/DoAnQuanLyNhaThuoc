@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class Thuoc implements Serializable {
     int giaBan,hsd;
-    String maFB,maThuoc,tenThuoc,donViTinh,noiDung;
+    String maFB,maThuoc,tenThuoc,donViTinh,noiDung,urlAnh;
 
     public Thuoc() {
     }
 
-    public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung) {
+    public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung,String urlAnh) {
         this.giaBan = giaBan;
         this.hsd = hsd;
         this.maFB = maFB;
@@ -17,7 +17,17 @@ public class Thuoc implements Serializable {
         this.tenThuoc = tenThuoc;
         this.donViTinh = donViTinh;
         this.noiDung = noiDung;
+        this.urlAnh = urlAnh;
     }
+
+    public String getUrlAnh() {
+        return urlAnh;
+    }
+
+    public void setUrlAnh(String urlAnh) {
+        this.urlAnh = urlAnh;
+    }
+
     public int getGiaBan() {
         return giaBan;
     }
