@@ -21,6 +21,7 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,22 +31,20 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
-public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
+public class AD_TraCuuNhapThuoc extends AppCompatActivity {
     ImageButton imTroVe, imLichBD, imLichKT, imTimKiem, imLocTheoTien, imLocTheoNgay,imRefresh;
     TextView tvNgayBatDau, tvNgayKetThuc, tvTongPhieu;
     ListView lvDanhSach;
 
     Adapter_TraCuuPhieuMuaThuoc adapterPhieuMuaThuocTraCuu;
     ArrayList<PhieuMuaThuoc> arrDanhSach = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nvk_tra_cuu_phieu_mua_thuoc);
+        setContentView(R.layout.activity_ad_tra_cuu_nhap_thuoc);
         setControl();
         setEvent();
     }
-
     private void setEvent() {
         //nút trở về
         imTroVe.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +88,7 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (checkNgay != 0) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(NVK_TraCuuPhieuMuaThuoc.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AD_TraCuuNhapThuoc.this);
                     builder.setTitle("Thông Báo");
                     builder.setMessage("Thời gian tìm kiếm không hợp lệ !!!");
                     builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
@@ -101,7 +100,9 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                 } else {
                     arrDanhSach.clear();
                     adapterPhieuMuaThuocTraCuu.clear();
+                    tvTongPhieu.setText("0 VNĐ");
                     StaticConfig.mPhieuMuaThuoc.addChildEventListener(new ChildEventListener() {
+                        int tongtien = 0;
                         @Override
                         public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                             PhieuMuaThuoc phieuMua = snapshot.getValue(PhieuMuaThuoc.class);
@@ -112,7 +113,9 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                                 if (ngayLap.compareTo(ngayBatDau1) >= 0 && ngayLap.compareTo(ngayKetThuc1) <= 0) {
                                     arrDanhSach.add(phieuMua);
                                     adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
-                                    tvTongPhieu.setText(arrDanhSach.size() + " Phiếu");
+                                    tongtien+=phieuMua.getTongTien();
+                                    DecimalFormat toTheFormat = new DecimalFormat("###,###,###.#");
+                                    tvTongPhieu.setText(toTheFormat.format(tongtien) + " VNĐ");
 
                                 }
                             } catch (ParseException e) {
@@ -200,6 +203,7 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
 
     private void layThongTinPhieuMuaThuoc() {
         StaticConfig.mPhieuMuaThuoc.addChildEventListener(new ChildEventListener() {
+            int tongtien =0;
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 PhieuMuaThuoc phieuMua = snapshot.getValue(PhieuMuaThuoc.class);
@@ -210,7 +214,9 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                     if (ngayLap.compareTo(ngayBatDau1) >= 0 && ngayLap.compareTo(ngayKetThuc1) <= 0) {
                         arrDanhSach.add(phieuMua);
                         adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
-                        tvTongPhieu.setText(arrDanhSach.size() + " Phiếu");
+                        tongtien+=phieuMua.getTongTien();
+                        DecimalFormat toTheFormat = new DecimalFormat("###,###,###.#");
+                        tvTongPhieu.setText(toTheFormat.format(tongtien) + " VNĐ");
 
                     }
                 } catch (ParseException e) {

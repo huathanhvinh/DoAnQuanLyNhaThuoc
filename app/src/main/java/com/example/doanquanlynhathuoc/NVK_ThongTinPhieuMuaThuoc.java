@@ -1,8 +1,12 @@
 package com.example.doanquanlynhathuoc;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,12 +24,19 @@ import com.example.doanquanlynhathuoc.Adapter.Adapter_ItemMuaBanThuoc;
 import com.example.doanquanlynhathuoc.Adapter.Adapter_PhieuMuaThuoc;
 import com.example.doanquanlynhathuoc.Class.ItemMuaBanThuoc;
 import com.example.doanquanlynhathuoc.Class.KhachHang;
+import com.example.doanquanlynhathuoc.Class.KhoThuoc;
 import com.example.doanquanlynhathuoc.Class.PhieuMuaThuoc;
+import com.example.doanquanlynhathuoc.Config.StaticConfig;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Stack;
 
 public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
     ImageButton imTroVe, imLich, imTang1, imGiam1;
@@ -37,7 +48,6 @@ public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
     Adapter_ItemMuaBanThuoc adapter_itemMuaBanThuoc;
     ArrayList<ItemMuaBanThuoc> arrThuoc = new ArrayList();
     int giaBan, viTri;
-    ItemMuaBanThuoc item = new ItemMuaBanThuoc();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,14 +97,13 @@ public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 btnSua.setEnabled(true);
-                item = arrThuoc.get(position);
-                tvMaThuoc.setText(item.getMaThuoc());
-                tvTenThuoc.setText(item.getTenThuoc());
-                tvDonViTinh.setText(item.getDonViTinh());
-                edSoLuong.setText(item.getSoLuong() + "");
-                tvThanhTien.setText(item.getThanhTien() + "");
+                tvMaThuoc.setText(arrThuoc.get(position).getMaThuoc());
+                tvTenThuoc.setText(arrThuoc.get(position).getTenThuoc());
+                tvDonViTinh.setText(arrThuoc.get(position).getDonViTinh());
+                edSoLuong.setText(arrThuoc.get(position).getSoLuong() + "");
+                tvThanhTien.setText(arrThuoc.get(position).getThanhTien() + "");
                 viTri = position;
-                giaBan = item.getThanhTien() / item.getSoLuong();
+                giaBan = arrThuoc.get(position).getThanhTien() / arrThuoc.get(position).getSoLuong();
             }
         });
         //sự kiện thay đổi thành tiền khi tăng hoặc giảm số lượng
@@ -112,24 +121,21 @@ public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 int thanhTien = Integer.parseInt(edSoLuong.getText().toString()) * giaBan;
-                tvThanhTien.setText(thanhTien+"");
+                tvThanhTien.setText(thanhTien + "");
             }
         });
         //sự kiện khi nhấn nút sửa
         btnSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int soLuongCu = item.getSoLuong();
                 arrThuoc.get(viTri).setSoLuong(Integer.parseInt(edSoLuong.getText().toString()));
                 arrThuoc.get(viTri).setThanhTien(Integer.parseInt(tvThanhTien.getText().toString()));
-                arrThuoc.get(viTri).setBienDong((Integer.parseInt(edSoLuong.getText().toString()))-soLuongCu);
                 adapter_itemMuaBanThuoc.notifyDataSetChanged();
-                int tongTien=0;
-                for (int i = 0;i<arrThuoc.size();i++)
-                {
-                    tongTien+= arrThuoc.get(i).getThanhTien();
+                int tongTien = 0;
+                for (int i = 0; i < arrThuoc.size(); i++) {
+                    tongTien += arrThuoc.get(i).getThanhTien();
                 }
-                tvTongTien1.setText(tongTien+"");
+                tvTongTien1.setText(tongTien + "");
                 DecimalFormat toTheFormat = new DecimalFormat("###,###,###.#");
                 tvTongTien2.setText(toTheFormat.format(tongTien));
             }
@@ -138,8 +144,157 @@ public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
         btnLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //sửa lại biến động (final)
-                Toast.makeText(getApplicationContext(), arrThuoc.get(0).getBienDong()+"", Toast.LENGTH_SHORT).show();
+                PhieuMuaThuoc phieuMua = (PhieuMuaThuoc) getIntent().getSerializableExtra("ThongTinPhieuMua");
+                phieuMua.setTongTien(Integer.parseInt(tvTongTien1.getText().toString()));
+                phieuMua.setNgayLap(tvNgayLap.getText().toString());
+                //cập nhật biến động
+                StaticConfig.mPhieuMuaThuoc.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        PhieuMuaThuoc mPhieuMua = snapshot.getValue(PhieuMuaThuoc.class);
+                        if (mPhieuMua.getMaFB().equals(phieuMua.getMaFB())) {
+                            for (int i = 0; i < phieuMua.getDanhSachThuoc().size(); i++) {
+                                int soMoi = phieuMua.getDanhSachThuoc().get(i).getSoLuong();
+                                int soCu = mPhieuMua.getDanhSachThuoc().get(i).getSoLuong();
+                                phieuMua.getDanhSachThuoc().get(i).setBienDong(soMoi - soCu);
+                            }
+                        }
+                        //sửa phiếu mua thuốc
+                        StaticConfig.mPhieuMuaThuoc.child(phieuMua.getMaFB()).setValue(phieuMua);
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                //Cập nhật kho
+                StaticConfig.mKhoThuoc.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        KhoThuoc kh = snapshot.getValue(KhoThuoc.class);
+                        for (int i = 0; i < phieuMua.getDanhSachThuoc().size(); i++) {
+                            if (kh.getMaThuoc().equals(phieuMua.getDanhSachThuoc().get(i).getMaThuoc())) {
+                                kh.setSoLuong(kh.getSoLuong() + phieuMua.getDanhSachThuoc().get(i).getBienDong());
+                                StaticConfig.mKhoThuoc.child(kh.getMaFB()).setValue(kh);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                //thông báo
+                AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThongTinPhieuMuaThuoc.this);
+                builder.setTitle("Thông Báo");
+                builder.setMessage("Lưu thành công, mời bạn quay về màn hình trước !!!");
+                builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                builder.show();
+            }
+        });
+        //nút xóa phiếu mua thuốc
+        btnXoa.setOnClickListener(new View.OnClickListener() {
+            PhieuMuaThuoc phieuMua = (PhieuMuaThuoc) getIntent().getSerializableExtra("ThongTinPhieuMua");
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThongTinPhieuMuaThuoc.this);
+                builder.setTitle("Thông Báo");
+                builder.setMessage("Bạn có muốn xóa không ?");
+                builder.setPositiveButton("có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Cập nhật kho
+                        StaticConfig.mKhoThuoc.addChildEventListener(new ChildEventListener() {
+                            @Override
+                            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                                KhoThuoc kh = snapshot.getValue(KhoThuoc.class);
+                                for (int i = 0; i < phieuMua.getDanhSachThuoc().size(); i++) {
+                                    if (kh.getMaThuoc().equals(phieuMua.getDanhSachThuoc().get(i).getMaThuoc())) {
+                                        kh.setSoLuong(kh.getSoLuong() - phieuMua.getDanhSachThuoc().get(i).getSoLuong());
+                                        StaticConfig.mKhoThuoc.child(kh.getMaFB()).setValue(kh);
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                            }
+
+                            @Override
+                            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                            }
+
+                            @Override
+                            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        //xóa phiếu mua
+                        StaticConfig.mPhieuMuaThuoc.child(phieuMua.getMaFB()).removeValue();
+                        //thông báo
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(NVK_ThongTinPhieuMuaThuoc.this);
+                        builder1.setTitle("Thông Báo");
+                        builder1.setMessage("Xóa thành công ?");
+                        builder1.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        });
+                        builder1.show();
+                    }
+                });
+                builder.setNegativeButton("không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.show();
             }
         });
     }
@@ -161,7 +316,7 @@ public class NVK_ThongTinPhieuMuaThuoc extends AppCompatActivity {
 
     private void tru1() {
         int soLuong = Integer.parseInt(edSoLuong.getText().toString());
-        if (soLuong > 0) {
+        if (soLuong > 1) {
             soLuong--;
             edSoLuong.setText(soLuong + "");
         }

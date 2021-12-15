@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="#DDE2E3"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:weightSum="10">
+    <TextView
+        android:id="@+id/tvMaThuoc"
+        android:gravity="left"
+        android:text="Mã thuốc"
+        android:textColor="#000"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+    </TextView>
+    <TextView
+        android:id="@+id/tvTenThuoc"
+        android:gravity="left"
+        android:text="Tên Thuốc"
+        android:textColor="#000"
+        android:layout_weight="5.5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+    </TextView>
+    <TextView
+        android:id="@+id/tvSoLuong"
+        android:gravity="center"
+        android:text="SL"
+        android:textColor="#000"
+        android:layout_weight="1.5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+</LinearLayout>

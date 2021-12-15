@@ -12,7 +12,9 @@ public class StaticConfig {
    public static DatabaseReference mNhanVien = database.getReference("DanhSachNhanVien");
    public static DatabaseReference mItemMuaBanThuoc = database.getReference("DanhSachItemMuaBanThuoc");
    public static DatabaseReference mPhieuMuaThuoc = database.getReference("DanhSachPhieuMuaThuoc");
+   public static DatabaseReference mPhieuHoaDon = database.getReference("DanhSachHoaDon");
    public static DatabaseReference mKhoThuoc = database.getReference("KhoThuoc");
+   public static DatabaseReference mQuyDinh = database.getReference("QuyDinhNhaThuoc");
    //
    public static String maFB,taiKhoan,trangThai,sdt,ghiChu,matKhau;
    public static int role;

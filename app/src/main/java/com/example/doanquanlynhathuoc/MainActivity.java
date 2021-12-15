@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.doanquanlynhathuoc.Class.Account;
 import com.example.doanquanlynhathuoc.Class.NhanVien;
+import com.example.doanquanlynhathuoc.Class.QuyDinhNhaThuoc;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
 
 import java.text.SimpleDateFormat;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
 //        String key8 = StaticConfig.mNhanVien.push().getKey();
 //        NhanVien ac8 = new NhanVien(key8,4,3,"4","4","0933123004","4","4");
 //        StaticConfig.mNhanVien.child(key8).setValue(ac8);
-        startActivity(new Intent(getApplicationContext(),NVK_DanhSachPhieuMuaThuoc.class));
+
+//        String key8 = StaticConfig.mQuyDinh.push().getKey();
+//        QuyDinhNhaThuoc ac8 = new QuyDinhNhaThuoc(5,"Hỗ trợ vận chuyển: Đơn hàng từ 300.000 đồng trở lên, sẽ được miễn phí hoàn toàn chi phí vận chuyển.");
+//        StaticConfig.mQuyDinh.child(key8).setValue(ac8);
+
+        startActivity(new Intent(getApplicationContext(),NVK_DanhSachThuoc.class));
     }
 }

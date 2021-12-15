@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NVBH_TraCuuHoaDon"
+    tools:context=".AD_TraCuuBanThuoc"
     android:weightSum="20"
     android:padding="5dp"
     android:orientation="vertical">
@@ -28,7 +28,7 @@
             android:textSize="30dp"
             android:textColor="#2196F3"
             android:textStyle="bold"
-            android:text="Tra Cứu Hóa Đơn"
+            android:text="Tra Cứu Bán Thuốc"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </TextView>
@@ -154,7 +154,7 @@
         android:orientation="horizontal">
         <TextView
             android:gravity="center"
-            android:text="Tổng hóa đơn: "
+            android:text="Tổng Tiền: "
             android:textSize="20dp"
             android:textColor="#000"
             android:textStyle="bold"
@@ -164,7 +164,6 @@
         <TextView
             android:id="@+id/tvTongHoaDon"
             android:gravity="center"
-            android:text="100 hóa đơn"
             android:textSize="20dp"
             android:textColor="#2196F3"
             android:textStyle="bold"

@@ -12,22 +12,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.doanquanlynhathuoc.Class.PhieuHoaDon;
 import com.example.doanquanlynhathuoc.Class.PhieuMuaThuoc;
+import com.example.doanquanlynhathuoc.NVBH_ThongTinHoaDon;
 import com.example.doanquanlynhathuoc.NVK_ThongTinPhieuMuaThuoc;
 import com.example.doanquanlynhathuoc.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Adapter_PhieuMuaThuoc extends ArrayAdapter {
+public class Adapter_PhieuHoaDon extends ArrayAdapter {
     Context context;
     int resource;
-    ArrayList<PhieuMuaThuoc> arrPhieuMuaThuoc;
-    public Adapter_PhieuMuaThuoc(@NonNull Context context, int resource, ArrayList<PhieuMuaThuoc> arrPhieuMuaThuoc) {
-        super(context, resource, arrPhieuMuaThuoc);
+    ArrayList<PhieuHoaDon> arrPhieuHoaDon;
+    public Adapter_PhieuHoaDon(@NonNull Context context, int resource, ArrayList<PhieuHoaDon> arrPhieuHoaDon) {
+        super(context, resource, arrPhieuHoaDon);
         this.context = context;
         this.resource = resource;
-        this.arrPhieuMuaThuoc = arrPhieuMuaThuoc;
+        this.arrPhieuHoaDon = arrPhieuHoaDon;
     }
 
     @NonNull
@@ -41,7 +43,7 @@ public class Adapter_PhieuMuaThuoc extends ArrayAdapter {
         TextView tongTien = convertView.findViewById(R.id.tvTongTien2);
         TextView btnChiTiet = convertView.findViewById(R.id.btnChiTiet2);
 
-        PhieuMuaThuoc phieuMua = arrPhieuMuaThuoc.get(position);
+        PhieuHoaDon phieuMua = arrPhieuHoaDon.get(position);
 
         maPhieu.setText("Mã phiếu: "+phieuMua.getMaPhieu());
         ngayLap.setText("Ngày lập: "+phieuMua.getNgayLap());
@@ -54,9 +56,9 @@ public class Adapter_PhieuMuaThuoc extends ArrayAdapter {
         btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NVK_ThongTinPhieuMuaThuoc.class);
+                Intent intent = new Intent(getContext(), NVBH_ThongTinHoaDon.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("ThongTinPhieuMua", phieuMua);
+                bundle.putSerializable("ThongTinPhieuHoaDon", phieuMua);
                 intent.putExtras(bundle);
                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
@@ -68,6 +70,6 @@ public class Adapter_PhieuMuaThuoc extends ArrayAdapter {
 
     @Override
     public int getCount() {
-        return arrPhieuMuaThuoc.size();
+        return arrPhieuHoaDon.size();
     }
 }

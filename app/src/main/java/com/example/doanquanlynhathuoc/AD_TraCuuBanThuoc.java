@@ -14,13 +14,14 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.doanquanlynhathuoc.Adapter.Adapter_TraCuuPhieuMuaThuoc;
-import com.example.doanquanlynhathuoc.Class.PhieuMuaThuoc;
+import com.example.doanquanlynhathuoc.Adapter.Adapter_TraCuuHoaDon;
+import com.example.doanquanlynhathuoc.Class.PhieuHoaDon;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,22 +31,20 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
-public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
-    ImageButton imTroVe, imLichBD, imLichKT, imTimKiem, imLocTheoTien, imLocTheoNgay,imRefresh;
+public class AD_TraCuuBanThuoc extends AppCompatActivity {
+    ImageButton imTroVe, imLichBD, imLichKT, imTimKiem, imLocTheoTien, imLocTheoNgay, imRefresh;
     TextView tvNgayBatDau, tvNgayKetThuc, tvTongPhieu;
     ListView lvDanhSach;
 
-    Adapter_TraCuuPhieuMuaThuoc adapterPhieuMuaThuocTraCuu;
-    ArrayList<PhieuMuaThuoc> arrDanhSach = new ArrayList<>();
-
+    Adapter_TraCuuHoaDon adapter_traCuuHoaDon;
+    ArrayList<PhieuHoaDon> arrDanhSach = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nvk_tra_cuu_phieu_mua_thuoc);
+        setContentView(R.layout.activity_ad_tra_cuu_ban_thuoc);
         setControl();
         setEvent();
     }
-
     private void setEvent() {
         //nút trở về
         imTroVe.setOnClickListener(new View.OnClickListener() {
@@ -70,8 +69,8 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                 imButtonLichNgayKetThuc();
             }
         });
-        //lấy thông tin phiếu mua từ danh sách firebase
-        layThongTinPhieuMuaThuoc();
+        //lấy thông tin các phiếu hóa đơn từ firebase
+        layThongTinPhieuHoaDon();
         //nút tìm
         imTimKiem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +88,7 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (checkNgay != 0) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(NVK_TraCuuPhieuMuaThuoc.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AD_TraCuuBanThuoc.this);
                     builder.setTitle("Thông Báo");
                     builder.setMessage("Thời gian tìm kiếm không hợp lệ !!!");
                     builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
@@ -100,19 +99,23 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                     builder.show();
                 } else {
                     arrDanhSach.clear();
-                    adapterPhieuMuaThuocTraCuu.clear();
-                    StaticConfig.mPhieuMuaThuoc.addChildEventListener(new ChildEventListener() {
+                    adapter_traCuuHoaDon.clear();
+                    tvTongPhieu.setText("0 VNĐ");
+                    StaticConfig.mPhieuHoaDon.addChildEventListener(new ChildEventListener() {
+                        int tongtien = 0;
                         @Override
                         public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                            PhieuMuaThuoc phieuMua = snapshot.getValue(PhieuMuaThuoc.class);
+                            PhieuHoaDon phieuMua = snapshot.getValue(PhieuHoaDon.class);
                             try {
                                 Date ngayLap = new SimpleDateFormat("dd/MM/yyyy").parse(phieuMua.getNgayLap());
                                 Date ngayBatDau1 = new SimpleDateFormat("dd/MM/yyyy").parse(tvNgayBatDau.getText().toString());
                                 Date ngayKetThuc1 = new SimpleDateFormat("dd/MM/yyyy").parse(tvNgayKetThuc.getText().toString());
                                 if (ngayLap.compareTo(ngayBatDau1) >= 0 && ngayLap.compareTo(ngayKetThuc1) <= 0) {
                                     arrDanhSach.add(phieuMua);
-                                    adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
-                                    tvTongPhieu.setText(arrDanhSach.size() + " Phiếu");
+                                    adapter_traCuuHoaDon.notifyDataSetChanged();
+                                    tongtien+=phieuMua.getTongTien();
+                                    DecimalFormat toTheFormat = new DecimalFormat("###,###,###.#");
+                                    tvTongPhieu.setText(toTheFormat.format(tongtien) + " VNĐ");
 
                                 }
                             } catch (ParseException e) {
@@ -148,10 +151,10 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
         imLocTheoTien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Collections.sort(arrDanhSach, new Comparator<PhieuMuaThuoc>() {
+                Collections.sort(arrDanhSach, new Comparator<PhieuHoaDon>() {
                     @Override
-                    public int compare(PhieuMuaThuoc o1, PhieuMuaThuoc o2) {
-                        if(o1.getTongTien() < o2.getTongTien())
+                    public int compare(PhieuHoaDon o1, PhieuHoaDon o2) {
+                        if (o1.getTongTien() < o2.getTongTien())
                             return -1;
                         else if (o1.getTongTien() == o2.getTongTien())
                             return 0;
@@ -159,22 +162,22 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                             return 1;
                     }
                 });
-                adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
+                adapter_traCuuHoaDon.notifyDataSetChanged();
             }
         });
         //nút lọc theo ngày
         imLocTheoNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Collections.sort(arrDanhSach, new Comparator<PhieuMuaThuoc>() {
+                Collections.sort(arrDanhSach, new Comparator<PhieuHoaDon>() {
                     @Override
-                    public int compare(PhieuMuaThuoc o1, PhieuMuaThuoc o2) {
+                    public int compare(PhieuHoaDon o1, PhieuHoaDon o2) {
                         try {
                             Date ngay1 = new SimpleDateFormat("dd/MM/yyyy").parse(o1.getNgayLap());
                             Date ngay2 = new SimpleDateFormat("dd/MM/yyyy").parse(o2.getNgayLap());
-                            if(ngay1.compareTo(ngay2)<0)
+                            if (ngay1.compareTo(ngay2) < 0)
                                 return -1;
-                            else if (ngay1.compareTo(ngay2)==0)
+                            else if (ngay1.compareTo(ngay2) == 0)
                                 return 0;
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -182,7 +185,7 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
                         return 1;
                     }
                 });
-                adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
+                adapter_traCuuHoaDon.notifyDataSetChanged();
             }
         });
         //nút refresh
@@ -190,27 +193,29 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrDanhSach.clear();
-                adapterPhieuMuaThuocTraCuu.clear();
+                adapter_traCuuHoaDon.clear();
                 layRaThangHienTaiVaThangTiepTheo();
-                layThongTinPhieuMuaThuoc();
+                layThongTinPhieuHoaDon();
             }
         });
-
     }
 
-    private void layThongTinPhieuMuaThuoc() {
-        StaticConfig.mPhieuMuaThuoc.addChildEventListener(new ChildEventListener() {
+    private void layThongTinPhieuHoaDon() {
+        StaticConfig.mPhieuHoaDon.addChildEventListener(new ChildEventListener() {
+            int tongtien = 0;
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                PhieuMuaThuoc phieuMua = snapshot.getValue(PhieuMuaThuoc.class);
+                PhieuHoaDon phieuMua = snapshot.getValue(PhieuHoaDon.class);
                 try {
                     Date ngayLap = new SimpleDateFormat("dd/MM/yyyy").parse(phieuMua.getNgayLap());
                     Date ngayBatDau1 = new SimpleDateFormat("dd/MM/yyyy").parse(tvNgayBatDau.getText().toString());
                     Date ngayKetThuc1 = new SimpleDateFormat("dd/MM/yyyy").parse(tvNgayKetThuc.getText().toString());
                     if (ngayLap.compareTo(ngayBatDau1) >= 0 && ngayLap.compareTo(ngayKetThuc1) <= 0) {
                         arrDanhSach.add(phieuMua);
-                        adapterPhieuMuaThuocTraCuu.notifyDataSetChanged();
-                        tvTongPhieu.setText(arrDanhSach.size() + " Phiếu");
+                        adapter_traCuuHoaDon.notifyDataSetChanged();
+                        tongtien+=phieuMua.getTongTien();
+                        DecimalFormat toTheFormat = new DecimalFormat("###,###,###.#");
+                        tvTongPhieu.setText(toTheFormat.format(tongtien) + " VNĐ");
 
                     }
                 } catch (ParseException e) {
@@ -238,7 +243,6 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void imButtonLichNgayKetThuc() {
@@ -300,10 +304,10 @@ public class NVK_TraCuuPhieuMuaThuoc extends AppCompatActivity {
         imLocTheoNgay = findViewById(R.id.imLocTheoNgay);
         tvNgayBatDau = findViewById(R.id.tvNgayBatDau);
         tvNgayKetThuc = findViewById(R.id.tvNgayKetThuc);
-        tvTongPhieu = findViewById(R.id.tvTongSoPhieu);
-        lvDanhSach = findViewById(R.id.lvDanhSachPMTTraCuu);
+        tvTongPhieu = findViewById(R.id.tvTongHoaDon);
+        lvDanhSach = findViewById(R.id.lvDanhSachHoaDon);
 
-        adapterPhieuMuaThuocTraCuu = new Adapter_TraCuuPhieuMuaThuoc(getApplicationContext(), R.layout.custom_tra_cuu_phieu_mua_thuoc, arrDanhSach);
-        lvDanhSach.setAdapter(adapterPhieuMuaThuocTraCuu);
+        adapter_traCuuHoaDon = new Adapter_TraCuuHoaDon(getApplicationContext(), R.layout.custom_tra_cuu_hoa_don, arrDanhSach);
+        lvDanhSach.setAdapter(adapter_traCuuHoaDon);
     }
 }
