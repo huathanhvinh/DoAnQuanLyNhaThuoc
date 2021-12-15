@@ -236,7 +236,6 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
         ArrayList<String> arrTenThuoc = new ArrayList<>();
         StaticConfig.mThuoc.addValueEventListener(new ValueEventListener() {
             ArrayAdapter<String> adapter;
-
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {

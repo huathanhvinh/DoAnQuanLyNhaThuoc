@@ -37,6 +37,13 @@
             android:layout_height="0dp">
         </TextView>
     </LinearLayout>
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="#03A9F4"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+    </TextView>
     <ScrollView
         android:layout_weight="7"
         android:layout_width="match_parent"
@@ -119,6 +126,13 @@
 
         </LinearLayout>
     </ScrollView>
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="#03A9F4"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+    </TextView>
     <LinearLayout
         android:gravity="center"
         android:layout_weight="1"

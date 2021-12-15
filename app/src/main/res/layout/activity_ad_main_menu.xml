@@ -38,6 +38,13 @@
             android:layout_height="0dp">
         </TextView>
     </LinearLayout>
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="#F44336"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+    </TextView>
     <ScrollView
         android:background="#FFFFFF"
         android:layout_weight="7"
@@ -160,7 +167,13 @@
 
         </LinearLayout>
     </ScrollView>
-
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="#F44336"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+    </TextView>
     <LinearLayout
         android:gravity="center"
         android:layout_weight="1"
@@ -176,5 +189,4 @@
             android:layout_height="wrap_content">
         </Button>
     </LinearLayout>
-
 </LinearLayout>

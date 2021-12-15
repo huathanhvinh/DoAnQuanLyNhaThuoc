@@ -22,6 +22,7 @@ import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -51,8 +52,8 @@ import java.util.Calendar;
 
 public class NVK_ThemThuoc extends AppCompatActivity {
     EditText edMaThuoc, edTenThuoc, edGiaBan, edHsd, edThongTinThuoc;
-    Spinner spDonViTinh;
-    Button btnThemThuoc;
+    Spinner spDonViTinh, spDSSDTKH;
+    Button btnThemThuoc, btnSend;
     ImageButton imTrove;
     TextView tvThongBao, tvThemAnh;
     ImageView imAnhThuoc;
@@ -73,6 +74,17 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         setContentView(R.layout.activity_nvk_them_thuoc);
         setControl();
         setEvent();
+//        for(int i = 0;i<spDSSDTKH.getCount();i++)
+//        {
+//            Toast.makeText(getApplicationContext(), spDSSDTKH.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+//        }
+//        btnSend.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String noiDung = "Hiện đã có thuốc mới, mời bạn ghé thăm cửa hàng để biết thêm chi tiết !!!";
+//                extracted("Halloween");
+//            }
+//        });
     }
 
     private void setEvent() {
@@ -85,6 +97,8 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         });
         //chọn ảnh từ thư viện
         layHinhTuDienThoai();
+        //lấy danh sách sdt khách hàng
+        layDanhSachSDTKH();
         //kiểm tra mã thuốc đã tồn tại hay chưa
         edMaThuoc.addTextChangedListener(new TextWatcher() {
             @Override
@@ -163,8 +177,12 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                             refAnhThuoc.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    int giaBan = Integer.parseInt(edGiaBan.getText().toString());
-                                    int hsd = Integer.parseInt(edHsd.getText().toString());
+                                    int giaBan = 0;
+                                    int hsd = 0;
+                                    if (edGiaBan.getText().toString().equals("") == false && edHsd.getText().toString().equals("") == false) {
+                                        giaBan = Integer.parseInt(edGiaBan.getText().toString());
+                                        hsd = Integer.parseInt(edHsd.getText().toString());
+                                    }
                                     String key = StaticConfig.mThuoc.push().getKey();
                                     Thuoc t = new Thuoc(giaBan, hsd, key, maThuoc, tenThuoc, dvt, thongTin, uri.toString());
                                     StaticConfig.mThuoc.child(key).setValue(t);
@@ -177,40 +195,11 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
                                             AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThemThuoc.this);
                                             builder.setTitle("Thông Báo");
-                                            builder.setMessage("Bạn có muốn gửi Thông Báo đến khách hàng !!!");
+                                            builder.setMessage("Bạn có muốn thông báo đến khách hàng !!!");
                                             builder.setPositiveButton("có", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
-                                                    StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
-                                                        @Override
-                                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                            String noiDung = "Thông Báo, hiện tại nhà thuốc ABC đã có thêm thuốc mới " + tenThuoc + ". Quý khách hàng đến cửa hàng hoặc liên hệ bộ phận CSKH để biết thêm thông tin";
-                                                            for (DataSnapshot ds: snapshot.getChildren())
-                                                            {
-                                                                KhachHang kh = ds.getValue(KhachHang.class);
-                                                                arrKH.add(kh);
-                                                            }
-                                                            for(int i =0;i<arrKH.size();i++)
-                                                            {
-                                                                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-                                                                {
-                                                                    if(checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED)
-                                                                    {
-                                                                        //sendSMS(noiDung,arrKH.get(i).getSdt());
-                                                                    }else
-                                                                    {
-                                                                        requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-
-                                                        @Override
-                                                        public void onCancelled(@NonNull DatabaseError error) {
-
-                                                        }
-                                                    });
-                                                    Toast.makeText(getApplicationContext(), "Chức năng đang được xây dựng", Toast.LENGTH_SHORT).show();
+                                                    extracted(tenThuoc);
                                                 }
                                             });
                                             builder.setNegativeButton("không", new DialogInterface.OnClickListener() {
@@ -223,7 +212,6 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                                         }
                                     });
                                     builder.show();
-
                                     //set dữ liệu rỗng
                                     edMaThuoc.setText("");
                                     edTenThuoc.setText("");
@@ -239,6 +227,42 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    //lấy sdt kh từ firebase
+    private void layDanhSachSDTKH() {
+        ArrayList<String> arrSDTKH = new ArrayList<>();
+        StaticConfig.mKhachHang.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayAdapter<String> adapter;
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    KhachHang kh = ds.getValue(KhachHang.class);
+                    arrSDTKH.add(kh.getSdt());
+                }
+                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrSDTKH);
+                spDSSDTKH.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    //gửi sms cho dskh
+    private void extracted(String tenThuoc) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                for (int i = 0; i < spDSSDTKH.getCount(); i++) {
+                    sendSMS("ABC có thuốc mới '" + tenThuoc + "', mời bạn ghé thăm.", spDSSDTKH.getItemAtPosition(i).toString() + "");
+                }
+            } else {
+                requestPermissions(new String[]{Manifest.permission.SEND_SMS}, 1);
+            }
+        }
     }
 
     //gửi sms cho khách hàng
@@ -246,7 +270,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(sdt, null, noiDung, null, null);
-            Toast.makeText(getApplicationContext(), "Gửi thành công đến "+sdt, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Gửi thành công đến " + sdt, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "Fail to send", Toast.LENGTH_SHORT).show();
@@ -327,6 +351,8 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         edThongTinThuoc = findViewById(R.id.edThemThongTinThuoc);
         spDonViTinh = findViewById(R.id.spThemDonViTinh);
         btnThemThuoc = findViewById(R.id.btnThemThuoc);
+        btnSend = findViewById(R.id.btnsend);
         imTrove = findViewById(R.id.imTrove);
+        spDSSDTKH = findViewById(R.id.spDanhSachSDTKhachHang);
     }
 }
