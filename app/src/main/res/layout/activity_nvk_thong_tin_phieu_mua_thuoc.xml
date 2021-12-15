@@ -6,17 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".NVK_ThongTinPhieuMuaThuoc"
     android:weightSum="10"
+    android:padding="5dp"
+    android:background="#fff"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/imTrove"
             android:layout_gravity="center"
             android:src="@drawable/ic_back"
             android:layout_width="80dp"
@@ -37,7 +38,7 @@
     <ScrollView
         android:background="#D9E6EC"
         android:padding="5dp"
-        android:layout_weight="8"
+        android:layout_weight="4.5"
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
@@ -60,7 +61,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:text="MT01"
+                    android:id="@+id/tvMaPMTTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="2"
@@ -82,7 +83,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:text="01/01/2021"
+                    android:id="@+id/tvNgayLapPhieuTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="1"
@@ -90,6 +91,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <ImageButton
+                    android:id="@+id/imLich"
                     android:background="#fff"
                     android:src="@drawable/ic_calendar"
                     android:layout_weight="1"
@@ -103,23 +105,21 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
                 <TextView
+                    android:text="Nhân viên lập: "
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
                 </TextView>
-                <EditText
-                    android:drawableLeft="@drawable/ic_search"
-                    android:layout_marginTop="1dp"
-                    android:background="#fff"
-                    android:hint="Tìm tên thuốc..."
+                <TextView
+                    android:id="@+id/tvNguoiLapPMTTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
-                </EditText>
+                </TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,17 +134,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
                 </TextView>
-                <Spinner
-                    android:entries="@array/listTenThuoc"
-                    android:drawableLeft="@drawable/ic_search"
-                    android:background="#fff"
-                    android:hint="Tìm tên thuốc..."
+                <TextView
+                    android:id="@+id/tvTenThuocTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
-                </Spinner>
+                </TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -160,7 +157,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:text="Mã thuốc"
+                    android:id="@+id/tvMaThuocTT1"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="2"
@@ -182,7 +179,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:text="Đơn vị tính"
+                    android:id="@+id/tvDonViTinhTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="2"
@@ -205,9 +202,10 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:id="@+id/edSoluongThuocTT"
                     android:gravity="center"
                     android:background="#fff"
-                    android:text="1"
+                    android:text="0"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="1"
@@ -220,11 +218,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageButton
+                        android:id="@+id/imThem1"
                         android:src="@drawable/ic_add"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                     </ImageButton>
                     <ImageButton
+                        android:id="@+id/imTru1"
                         android:src="@drawable/ic_remove"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -246,7 +246,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:text="900,000,000"
+                    android:id="@+id/tvThanhTienTT"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:layout_weight="1"
@@ -254,38 +254,143 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <Button
+                    android:id="@+id/btnSuaTTPMT"
                     android:backgroundTint="#2196F3"
-                    android:text="Thêm"
+                    android:text="Sửa"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="90dp">
+                    android:layout_height="60dp">
 
                 </Button>
             </LinearLayout>
-            <ListView
-                android:background="#fff"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="3.3"
+        android:background="#D9E6EC"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="Danh Sách Thuốc Nhập"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1.8"
+                android:gravity="left"
+                android:text="Tên thuốc"
+                android:textColor="#000"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:text="DVT"
+                android:textColor="#000"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="SL"
+                android:textColor="#000"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:text="Thành Tiền"
+                android:textColor="#000"></TextView>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/dsThuocDaMua"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.4"
+            android:background="#fff"
+            tools:listitem="@layout/item_mua_ban_thuoc"></ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTongTien1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textColor="#FFF"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/tvTongTien11"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#F44336"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="VNĐ"
+            android:textColor="#F44336"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:gravity="center"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btnLuuPMTTT"
             android:backgroundTint="#2196F3"
             android:layout_gravity="center"
             android:text="Lưu Phiếu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></Button>
         <Button
+            android:id="@+id/btnXoaPMT"
             android:layout_marginLeft="40dp"
             android:backgroundTint="#2196F3"
             android:layout_gravity="center"
