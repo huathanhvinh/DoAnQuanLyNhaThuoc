@@ -5,14 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NVK_DanhSachThuoc"
-
+    android:padding="5dp"
     android:weightSum="10"
-    android:orientation="vertical"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:orientation="vertical">
     <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,8 +34,6 @@
     <LinearLayout
         android:background="#D9E6EC"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:weightSum="3"
@@ -80,7 +74,6 @@
     </LinearLayout>
     <LinearLayout
         android:gravity="center"
-        android:layout_margin="10dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"

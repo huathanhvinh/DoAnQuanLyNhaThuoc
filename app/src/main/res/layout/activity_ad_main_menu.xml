@@ -19,17 +19,19 @@
             android:layout_weight="3"
             android:gravity="center"
             android:textSize="40dp"
-            android:textColor="#03A9F4"
+            android:textColor="#F44336"
             android:textStyle="bold"
             android:text="Admin Main Menu"
             android:layout_width="match_parent"
             android:layout_height="0dp">
         </TextView>
         <TextView
+            android:layout_marginRight="10dp"
+            android:id="@+id/tvTaiKhoan"
             android:layout_weight="1"
             android:gravity="right"
             android:textSize="20dp"
-            android:textColor="#03A9F4"
+            android:textColor="#F44336"
             android:textStyle="bold"
             android:text="Xin chào: abc0933123001"
             android:layout_width="match_parent"
@@ -49,111 +51,108 @@
             android:weightSum="5"
             android:orientation="vertical">
             <Button
+                android:id="@+id/btnThemNhanVien"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
-                android:text="1. Xem danh sách nhân viên"
+                android:text="1. Thêm Nhân Viên"
                 android:textColor="#fff"
                 android:textSize="18dp"></Button>
             <Button
+                android:id="@+id/btnRSMatKhau"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="2. Thêm Nhân Viên"
+                android:text="2. Reset Mật khẩu nhân viên"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnKhoaNhanVien"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="3. Reset Mật Khẩu Nhân Viên"
+                android:text="3. Khóa Nhân Viên"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnThongKe"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="4. Khóa Tài Khoản Nhân Viên"
+                android:text="4. Thống kê doanh thu"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnXemDanhSachNhanVien"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="5. Báo Cáo Tồn Thuốc"
+                android:text="5. Xem danh sách nhân viên"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnTraCuuNhapThuoc"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="6. Báo Cáo Công Nợ"
+                android:text="6. Tra Cứu nhập thuốc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnTraCuuBanThuoc"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="7. Tra Cứu Tồn Thuốc"
+                android:text="7. Tra Cứu Bán thuốc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnSuaDoiQuyDinhNhaThuoc"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="8. Tra Cứu Công Nợ"
+                android:text="8. Sửa Đổi quy định nhà thuốc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
             </Button>
             <Button
+                android:id="@+id/btnDoiMatKhau"
                 android:background="@drawable/custom_button_admin_mainmenu"
                 android:paddingLeft="10dp"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 android:textColor="#fff"
-                android:text="9. Sửa Đổi Quy Định Nhà Thuốc"
-                android:layout_width="320dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="10dp">
-            </Button>
-            <Button
-                android:id="@+id/btnDoiMatKhauAD"
-                android:background="@drawable/custom_button_admin_mainmenu"
-                android:paddingLeft="10dp"
-                android:gravity="center_vertical"
-                android:textSize="18dp"
-                android:textColor="#fff"
-                android:text="10. Đổi Mật Khẩu"
+                android:text="9. Đổi Mật Khẩu"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp">
@@ -168,8 +167,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:id="@+id/btnDangXuat"
             android:textSize="25dp"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="#F44336"
             android:text="Đăng Xuất"
             android:textColor="#fff"
             android:layout_width="wrap_content"
