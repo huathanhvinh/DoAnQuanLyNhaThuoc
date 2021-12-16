@@ -44,13 +44,18 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvbh_tra_cuu_hoa_don.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_danh_sach_phieu_mua_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_danh_sach_thuoc.xml" value="0.1369535519125683" />
+<<<<<<< HEAD
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_main_menu.xml" value="0.125" />
+=======
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_main_menu.xml" value="0.1369535519125683" />
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_them_phieu_mua_thuoc.xml" value="0.165" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_them_thuoc.xml" value="0.165" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_phieu_mua_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_thong_tin_thuoc.xml" value="0.13353825136612021" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_tra_cuu_kho_thuoc.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/activity_nvk_tra_cuu_phieu_mua_thuoc.xml" value="0.13353825136612021" />
+<<<<<<< HEAD
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/cus_tom_phieu_mua_thuoc_tra_cuu.xml" value="0.1" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_khachhang.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_kho_thuoc.xml" value="0.166015625" />
@@ -62,6 +67,13 @@
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_thuoc.xml" value="0.1" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_tra_cuu_hoa_don.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_tra_cuu_phieu_mua_thuoc.xml" value="0.166015625" />
+=======
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_khachhang.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_khoa.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_nhanvien_reset_matkhau.xml" value="0.166015625" />
+        <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/custom_thuoc.xml" value="0.166015625" />
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/layout/item_mua_ban_thuoc.xml" value="0.166015625" />
         <entry key="..\:/DoAnQuanLyNhaThuoc/app/src/main/res/menu/menuadmin.xml" value="0.22135416666666666" />
       </map>

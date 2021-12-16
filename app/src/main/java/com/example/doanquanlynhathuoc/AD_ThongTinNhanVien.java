@@ -171,13 +171,21 @@ public class AD_ThongTinNhanVien extends AppCompatActivity {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(AD_ThongTinNhanVien.this);
                     builder1.setTitle("Thông Báo");
                     builder1.setMessage("Cập nhật thành công, \n" +
+<<<<<<< HEAD
                             "Vui lòng cập nhật lại thông tin tại màn hình danh sách nhân viên !!!");
+=======
+                            "Vui lòng cập nhật lại thông tin tại màn hình danh sách khách hàng !!!");
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
                     builder1.setPositiveButton("oke", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(AD_ThongTinNhanVien.this);
                             builder.setTitle("Thông Báo");
+<<<<<<< HEAD
                             builder.setMessage("Mời bạn quay lại màn hình danh sách nhân viên !!!");
+=======
+                            builder.setMessage("Mời bạn quay lại màn hình danh sách !!!");
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
                             builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

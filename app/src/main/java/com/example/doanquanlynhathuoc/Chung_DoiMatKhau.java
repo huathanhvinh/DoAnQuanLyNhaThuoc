@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.ImageButton;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import android.widget.TextView;
 
 import com.example.doanquanlynhathuoc.Class.Account;
@@ -23,7 +26,10 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
     TextView tvTaiKhoan;
     EditText edMkHienTai, edMkMoi, edMkXacNhan;
     Button btnDoiMatKhau;
+<<<<<<< HEAD
     ImageButton imTroVe;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,7 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
     }
 
     private void setEvent() {
+<<<<<<< HEAD
         //nút trở về
         imTroVe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +48,8 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
                 finish();
             }
         });
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         //Gán giá trị tài khoản hiện tại
         tvTaiKhoan.setText(StaticConfig.taiKhoan);
         //nút đổi mật khẩu
@@ -134,6 +143,9 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
         edMkMoi = findViewById(R.id.edMatKhauMoi);
         edMkXacNhan = findViewById(R.id.edXacNhanMatKhauMoi);
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhau);
+<<<<<<< HEAD
         imTroVe = findViewById(R.id.imTrove);
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 }

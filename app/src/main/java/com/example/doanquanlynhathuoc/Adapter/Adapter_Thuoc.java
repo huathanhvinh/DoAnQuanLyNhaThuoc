@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.ImageView;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +20,10 @@ import androidx.annotation.Nullable;
 import com.example.doanquanlynhathuoc.Class.Thuoc;
 import com.example.doanquanlynhathuoc.NVK_ThongTinThuoc;
 import com.example.doanquanlynhathuoc.R;
+<<<<<<< HEAD
 import com.squareup.picasso.Picasso;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
 import java.util.ArrayList;
 
@@ -43,7 +49,10 @@ public class Adapter_Thuoc extends ArrayAdapter {
         TextView dvt = convertView.findViewById(R.id.tvDonViTinh);
         TextView giaBan = convertView.findViewById(R.id.tvGiaBan);
         Button btnChiTiet = convertView.findViewById(R.id.btnChiTiet);
+<<<<<<< HEAD
         ImageView imAnhThuoc = convertView.findViewById(R.id.imAnhThuoc);
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
         Thuoc t = arrThuoc.get(position);
         stt.setText(t.getMaThuoc());
@@ -51,11 +60,14 @@ public class Adapter_Thuoc extends ArrayAdapter {
         dvt.setText(t.getDonViTinh()+"");
         giaBan.setText(t.getGiaBan()+"");
 
+<<<<<<< HEAD
         Picasso.get()
                 .load(t.getUrlAnh())
                 .fit()
                 .into(imAnhThuoc);
 
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

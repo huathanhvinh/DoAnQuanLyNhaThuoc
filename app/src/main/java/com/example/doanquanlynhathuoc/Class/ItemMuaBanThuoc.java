@@ -4,18 +4,27 @@ import java.io.Serializable;
 
 public class ItemMuaBanThuoc implements Serializable {
     String maFB,maThuoc,tenThuoc,donViTinh;
+<<<<<<< HEAD
     int soLuong,thanhTien, bienDong;
+=======
+    int soLuong,thanhTien;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
     public ItemMuaBanThuoc() {
     }
 
+<<<<<<< HEAD
     public ItemMuaBanThuoc(String maFB, String maThuoc, String tenThuoc, String donViTinh, int soLuong, int thanhTien,int bienDong) {
+=======
+    public ItemMuaBanThuoc(String maFB, String maThuoc, String tenThuoc, String donViTinh, int soLuong, int thanhTien) {
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         this.maFB = maFB;
         this.maThuoc = maThuoc;
         this.tenThuoc = tenThuoc;
         this.donViTinh = donViTinh;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
+<<<<<<< HEAD
         this.bienDong = bienDong;
     }
 
@@ -25,6 +34,8 @@ public class ItemMuaBanThuoc implements Serializable {
 
     public void setBienDong(int bienDong) {
         this.bienDong = bienDong;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 
     public String getMaFB() {

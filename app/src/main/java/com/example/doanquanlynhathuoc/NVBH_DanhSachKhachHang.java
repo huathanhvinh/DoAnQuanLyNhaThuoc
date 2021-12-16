@@ -13,7 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
 import com.example.doanquanlynhathuoc.Adapter.Adapter_KhachHang;
 import com.example.doanquanlynhathuoc.Adapter.Adapter_Thuoc;

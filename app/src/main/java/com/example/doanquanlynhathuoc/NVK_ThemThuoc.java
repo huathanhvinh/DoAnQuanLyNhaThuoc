@@ -1,12 +1,16 @@
 package com.example.doanquanlynhathuoc;
 
 import androidx.annotation.NonNull;
+<<<<<<< HEAD
 import androidx.annotation.Nullable;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -27,6 +31,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+=======
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +48,7 @@ import android.widget.Toast;
 import com.example.doanquanlynhathuoc.Class.KhachHang;
 import com.example.doanquanlynhathuoc.Class.Thuoc;
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
+<<<<<<< HEAD
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
@@ -67,6 +82,18 @@ public class NVK_ThemThuoc extends AppCompatActivity {
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReference();
+=======
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+public class NVK_ThemThuoc extends AppCompatActivity {
+    EditText edMaThuoc, edTenThuoc, edGiaBan, edHsd, edThongTinThuoc;
+    Spinner spDonViTinh;
+    Button btnThemThuoc;
+    ImageButton imTrove;
+    TextView tvThongBao;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +101,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         setContentView(R.layout.activity_nvk_them_thuoc);
         setControl();
         setEvent();
+<<<<<<< HEAD
 //        for(int i = 0;i<spDSSDTKH.getCount();i++)
 //        {
 //            Toast.makeText(getApplicationContext(), spDSSDTKH.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
@@ -85,6 +113,8 @@ public class NVK_ThemThuoc extends AppCompatActivity {
 //                extracted("Halloween");
 //            }
 //        });
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 
     private void setEvent() {
@@ -95,10 +125,13 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                 finish();
             }
         });
+<<<<<<< HEAD
         //chọn ảnh từ thư viện
         layHinhTuDienThoai();
         //lấy danh sách sdt khách hàng
         layDanhSachSDTKH();
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         //kiểm tra mã thuốc đã tồn tại hay chưa
         edMaThuoc.addTextChangedListener(new TextWatcher() {
             @Override
@@ -144,6 +177,11 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                 String tenThuoc = edTenThuoc.getText().toString();
                 String dvt = spDonViTinh.getSelectedItem().toString();
                 String thongTin = edThongTinThuoc.getText().toString();
+<<<<<<< HEAD
+=======
+                int giaBan;
+                int hsd;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
                 if (maThuoc.equals("") || tenThuoc.equals("") || edGiaBan.getText().toString().equals("") ||
                         edHsd.getText().toString().equals("") || thongTin.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThemThuoc.this);
@@ -156,6 +194,7 @@ public class NVK_ThemThuoc extends AppCompatActivity {
                     });
                     builder.show();
                 } else {
+<<<<<<< HEAD
                     Calendar calendar = Calendar.getInstance();
                     StorageReference refAnhThuoc = storageRef.child("image" + calendar.getTimeInMillis() + ".png");
                     imAnhThuoc.setDrawingCacheEnabled(true);
@@ -338,12 +377,42 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Bạn chưa chọn gì", Toast.LENGTH_SHORT).show();
         }
+=======
+                    giaBan = Integer.parseInt(edGiaBan.getText().toString());
+                    hsd = Integer.parseInt(edHsd.getText().toString());
+                    String key = StaticConfig.mThuoc.push().getKey();
+                    Thuoc t = new Thuoc(giaBan, hsd, key, maThuoc, tenThuoc, dvt, thongTin);
+                    StaticConfig.mThuoc.child(key).setValue(t);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NVK_ThemThuoc.this);
+                    builder.setTitle("Thông Báo");
+                    builder.setMessage("Thêm thành công !!!");
+                    builder.setPositiveButton("oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                    //set dữ liệu rỗng
+                    edMaThuoc.setText("");
+                    edTenThuoc.setText("");
+                    edGiaBan.setText("");
+                    edHsd.setText("");
+                    edThongTinThuoc.setText("");
+                    spDonViTinh.setSelection(0);
+                }
+            }
+        });
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 
     private void setControl() {
         tvThongBao = findViewById(R.id.tvThongBao);
+<<<<<<< HEAD
         tvThemAnh = findViewById(R.id.tvChonAnh);
         imAnhThuoc = findViewById(R.id.imAnhThuoc);
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         edMaThuoc = findViewById(R.id.edThemMaThuoc);
         edTenThuoc = findViewById(R.id.edThemTenThuoc);
         edGiaBan = findViewById(R.id.edThemGiaBanThuoc);
@@ -351,8 +420,12 @@ public class NVK_ThemThuoc extends AppCompatActivity {
         edThongTinThuoc = findViewById(R.id.edThemThongTinThuoc);
         spDonViTinh = findViewById(R.id.spThemDonViTinh);
         btnThemThuoc = findViewById(R.id.btnThemThuoc);
+<<<<<<< HEAD
         btnSend = findViewById(R.id.btnsend);
         imTrove = findViewById(R.id.imTrove);
         spDSSDTKH = findViewById(R.id.spDanhSachSDTKhachHang);
+=======
+        imTrove = findViewById(R.id.imTrove);
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 }

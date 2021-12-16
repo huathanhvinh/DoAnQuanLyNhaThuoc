@@ -37,6 +37,7 @@
             android:layout_height="0dp">
         </TextView>
     </LinearLayout>
+<<<<<<< HEAD
     <TextView
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
@@ -44,17 +45,23 @@
         android:layout_width="match_parent"
         android:layout_height="3dp">
     </TextView>
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     <ScrollView
         android:layout_weight="7"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <LinearLayout
+<<<<<<< HEAD
             android:paddingTop="10dp"
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
+<<<<<<< HEAD
                 android:id="@+id/btnLapPhieuNhapThuoc"
                 android:layout_width="320dp"
                 android:layout_height="80dp"
@@ -122,10 +129,55 @@
                 android:textSize="18dp"
                 android:textColor="#000"
                 android:text="6. Đổi mật khẩu">
+=======
+                android:id="@+id/btnNVK_LapPhieuNhapThuoc"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="Lập Phiếu Nhập Thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="xem danh sách thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:text="Xem danh sách phiếu nhập thuốc"
+                android:textColor="#fff"
+                android:textSize="18dp"></Button>
+            <Button
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Tra cứu phiếu nhập thuốc"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
+            <Button
+                android:id="@+id/btnDoiMatKhauNVK"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="đổi mật khẩu"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
             </Button>
 
         </LinearLayout>
     </ScrollView>
+<<<<<<< HEAD
     <TextView
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
@@ -133,6 +185,8 @@
         android:layout_width="match_parent"
         android:layout_height="3dp">
     </TextView>
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     <LinearLayout
         android:gravity="center"
         android:layout_weight="1"

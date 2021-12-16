@@ -3,21 +3,37 @@ package com.example.doanquanlynhathuoc;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.content.DialogInterface;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
 public class AD_MainMenu extends AppCompatActivity {
     TextView tvTaiKhoan;
     Button btnThemNV, btnRSMatKhauNV, btnKhoaNV, btnThongKe;
     Button btnDSNV, btnTraCuuNhapThuoc, btnTraCuuBanThuoc, btnSuaQuyDinh, btnDoiMK, btnDangXuat;
 
+<<<<<<< HEAD
+=======
+    //    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menuadmin,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+    Button btnDoiMatKhau;
+
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +44,7 @@ public class AD_MainMenu extends AppCompatActivity {
     }
 
     private void setEvent() {
+<<<<<<< HEAD
         //lấy tài khoản
         tvTaiKhoan.setText("Xin chào: "+ StaticConfig.taiKhoan);
         //nút thêm nhân viên
@@ -88,11 +105,16 @@ public class AD_MainMenu extends AppCompatActivity {
         });
         //đổi mật khẩu
         btnDoiMK.setOnClickListener(new View.OnClickListener() {
+=======
+        //nút đổi mật khẩu
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Chung_DoiMatKhau.class));
             }
         });
+<<<<<<< HEAD
         //đăng xuất
         //nút đăng xuất
         btnDangXuat.setOnClickListener(new View.OnClickListener() {
@@ -131,5 +153,11 @@ public class AD_MainMenu extends AppCompatActivity {
         btnSuaQuyDinh = findViewById(R.id.btnSuaDoiQuyDinhNhaThuoc);
         btnDoiMK = findViewById(R.id.btnDoiMatKhau);
         btnDangXuat = findViewById(R.id.btnDangXuat);
+=======
+    }
+
+    private void setControl() {
+        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauAD);
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 }

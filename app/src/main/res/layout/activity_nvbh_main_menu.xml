@@ -123,6 +123,16 @@
                 android:textColor="#000"
                 android:text="6. Đổi mật khẩu">
             </Button>
+            <Button
+                android:id="@+id/btnDoiMatKhauNVBH"
+                android:backgroundTint="#2196F3"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textColor="#fff"
+                android:text="Đổi Mật Khẩu"
+                android:layout_width="320dp"
+                android:layout_height="100dp">
+            </Button>
 
         </LinearLayout>
     </ScrollView>

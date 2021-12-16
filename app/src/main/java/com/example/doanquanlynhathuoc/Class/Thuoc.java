@@ -4,12 +4,20 @@ import java.io.Serializable;
 
 public class Thuoc implements Serializable {
     int giaBan,hsd;
+<<<<<<< HEAD
     String maFB,maThuoc,tenThuoc,donViTinh,noiDung,urlAnh;
+=======
+    String maFB,maThuoc,tenThuoc,donViTinh,noiDung;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 
     public Thuoc() {
     }
 
+<<<<<<< HEAD
     public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung,String urlAnh) {
+=======
+    public Thuoc(int giaBan, int hsd, String maFB, String maThuoc, String tenThuoc, String donViTinh, String noiDung) {
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         this.giaBan = giaBan;
         this.hsd = hsd;
         this.maFB = maFB;
@@ -17,6 +25,7 @@ public class Thuoc implements Serializable {
         this.tenThuoc = tenThuoc;
         this.donViTinh = donViTinh;
         this.noiDung = noiDung;
+<<<<<<< HEAD
         this.urlAnh = urlAnh;
     }
 
@@ -28,6 +37,9 @@ public class Thuoc implements Serializable {
         this.urlAnh = urlAnh;
     }
 
+=======
+    }
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     public int getGiaBan() {
         return giaBan;
     }

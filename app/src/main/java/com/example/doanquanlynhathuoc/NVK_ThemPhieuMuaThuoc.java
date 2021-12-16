@@ -97,10 +97,17 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
         btnThemThuoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 String key = StaticConfig.mItemMuaBanThuoc.push().getKey();
                 int thanhTien = Integer.parseInt(tvThanhTien.getText().toString());
                 int soLuong = Integer.parseInt(edSoLuong.getText().toString());
                 ItemMuaBanThuoc item = new ItemMuaBanThuoc(key, tvMaThuoc.getText().toString(), spDanhSachThuoc.getSelectedItem().toString(), tvDonViTinh.getText().toString(), soLuong, thanhTien,0);
+=======
+                String key = StaticConfig.mAccount.push().getKey();
+                int thanhTien = Integer.parseInt(tvThanhTien.getText().toString());
+                int soLuong = Integer.parseInt(edSoLuong.getText().toString());
+                ItemMuaBanThuoc item = new ItemMuaBanThuoc(key, tvMaThuoc.getText().toString(), spDanhSachThuoc.getSelectedItem().toString(), tvDonViTinh.getText().toString(), soLuong, thanhTien);
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
                 arrItem.add(item);
                 adapter_itemMuaBanThuoc.notifyDataSetChanged();
                 int tongTien = Integer.parseInt(tvTongTien1.getText().toString());
@@ -173,6 +180,10 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
                             StaticConfig.mKhoThuoc.addValueEventListener(new ValueEventListener() {
                                 int min = 0;
                                 int max = dsThuoc.size();
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (min < max) {
@@ -229,6 +240,11 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
                 }
             }
         });
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 
     private void layDanhSachThuocTruyenVaoSP() {
@@ -236,6 +252,10 @@ public class NVK_ThemPhieuMuaThuoc extends AppCompatActivity {
         ArrayList<String> arrTenThuoc = new ArrayList<>();
         StaticConfig.mThuoc.addValueEventListener(new ValueEventListener() {
             ArrayAdapter<String> adapter;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {

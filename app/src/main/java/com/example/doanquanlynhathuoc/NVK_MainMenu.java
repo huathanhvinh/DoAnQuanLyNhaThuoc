@@ -3,11 +3,15 @@ package com.example.doanquanlynhathuoc;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.content.DialogInterface;
+=======
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 import com.example.doanquanlynhathuoc.Config.StaticConfig;
@@ -16,6 +20,11 @@ public class NVK_MainMenu extends AppCompatActivity {
     TextView tvTaiKhoan;
     Button btnDoiMatKhau, btnLapPhieuNhapThuoc, btnTraCuuKho, btnTraCuuPhieuNhapThuoc, btnXemDanhSachThuoc, btnDangXuat, btnXemDanhSachPhieuNhapThuoc;
 
+=======
+
+public class NVK_MainMenu extends AppCompatActivity {
+Button btnDoiMatKhau,btnLapPhieuNhapThuoc;
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +34,18 @@ public class NVK_MainMenu extends AppCompatActivity {
     }
 
     private void setEvent() {
+<<<<<<< HEAD
         //lấy tài khoản
         tvTaiKhoan.setText("Xin chào: "+StaticConfig.taiKhoan);
+=======
+        //nút đổi mật khẩu
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Chung_DoiMatKhau.class));
+            }
+        });
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
         //nút lập phiếu nhập thuốc
         btnLapPhieuNhapThuoc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +53,7 @@ public class NVK_MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),NVK_ThemPhieuMuaThuoc.class));
             }
         });
+<<<<<<< HEAD
         //nút tra cứu kho
         btnTraCuuKho.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,5 +122,11 @@ public class NVK_MainMenu extends AppCompatActivity {
         btnXemDanhSachPhieuNhapThuoc = findViewById(R.id.btnXemDanhSachPhieuNhapThuoc);
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhau);
         btnDangXuat = findViewById(R.id.btnDangXuat);
+=======
+    }
+    private void setControl() {
+        btnDoiMatKhau = findViewById(R.id.btnDoiMatKhauNVK);
+        btnLapPhieuNhapThuoc = findViewById(R.id.btnNVK_LapPhieuNhapThuoc);
+>>>>>>> a3e79577e4e93d0867f3ba91e3889fa447058bd4
     }
 }
