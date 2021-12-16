@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import com.example.doanquanlynhathuoc.Class.Thuoc;
 import com.example.doanquanlynhathuoc.NVK_ThongTinThuoc;
 import com.example.doanquanlynhathuoc.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -41,12 +43,18 @@ public class Adapter_Thuoc extends ArrayAdapter {
         TextView dvt = convertView.findViewById(R.id.tvDonViTinh);
         TextView giaBan = convertView.findViewById(R.id.tvGiaBan);
         Button btnChiTiet = convertView.findViewById(R.id.btnChiTiet);
+        ImageView imAnhThuoc = convertView.findViewById(R.id.imAnhThuoc);
 
         Thuoc t = arrThuoc.get(position);
         stt.setText(t.getMaThuoc());
         tenThuoc.setText(t.getTenThuoc());
         dvt.setText(t.getDonViTinh()+"");
         giaBan.setText(t.getGiaBan()+"");
+
+        Picasso.get()
+                .load(t.getUrlAnh())
+                .fit()
+                .into(imAnhThuoc);
 
         btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.doanquanlynhathuoc.Class.Account;
@@ -22,6 +23,7 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
     TextView tvTaiKhoan;
     EditText edMkHienTai, edMkMoi, edMkXacNhan;
     Button btnDoiMatKhau;
+    ImageButton imTroVe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,13 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
     }
 
     private void setEvent() {
+        //nút trở về
+        imTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         //Gán giá trị tài khoản hiện tại
         tvTaiKhoan.setText(StaticConfig.taiKhoan);
         //nút đổi mật khẩu
@@ -125,5 +134,6 @@ public class Chung_DoiMatKhau extends AppCompatActivity {
         edMkMoi = findViewById(R.id.edMatKhauMoi);
         edMkXacNhan = findViewById(R.id.edXacNhanMatKhauMoi);
         btnDoiMatKhau = findViewById(R.id.btnDoiMatKhau);
+        imTroVe = findViewById(R.id.imTrove);
     }
 }

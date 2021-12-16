@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.doanquanlynhathuoc">
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+    </uses-permission>
 
     <application
         android:allowBackup="true"
@@ -9,6 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnQuanLyNhaThuoc">
+        <activity
+            android:name=".AD_SuaDoiQuyDinhNhaThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".AD_ThongKeDoanhSoTheoNam"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuNhapThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".AD_TraCuuBanThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".NVK_TraCuuKhoThuoc"
+            android:exported="false" />
         <activity
             android:name=".NVBH_TraCuuHoaDon"
             android:exported="false" />
@@ -56,21 +77,6 @@
             android:exported="false" />
         <activity
             android:name=".NVK_MainMenu"
-            android:exported="false" />
-        <activity
-            android:name=".AD_TraCuuCongNo"
-            android:exported="false" />
-        <activity
-            android:name=".AD_TraCuuTonThuoc"
-            android:exported="false" />
-        <activity
-            android:name=".AD_BaoCaoCongNo"
-            android:exported="false" />
-        <activity
-            android:name=".AD_BaoCaoTonThuoc"
-            android:exported="false" />
-        <activity
-            android:name=".AD_ThongKeBaoCaoTheoThang"
             android:exported="false" />
         <activity
             android:name=".AD_KhoaNhanVienStep2"
